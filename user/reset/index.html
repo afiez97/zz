@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Contact: support@hencework.com
+
+License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Daftar Pengguna Baharu</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.css" type="text/css" />
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.min.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
+    </div>
+    <!-- /Preloader -->
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper">
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper hk-auth-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-5 pa-0">
+                        <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url(../dist/img/01.jpg);">
+                            <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                <div class="auth-cover-content w-xxl-75 w-sm-90 w-100">
+                                    <h1 class="display-3 text-white mb-20">Lupa Katalaluan</h1>
+                                    <p class="text-white">Langkah-langkah.<br><br>1. Masukkan No. Kad Pengenalan Untuk Semakan.<br>2. Emel lupa katalaluan akan dihantar kepada pengguna.</p>
+                                    <!-- <div class="play-wrap">
+                                        <a class="play-btn" href="#"></a>
+                                        <span>How it works ?</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="bg-overlay bg-trans-dark-50"></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 pa-0" id="check_ic">
+                        <div class="auth-form-wrap py-xl-0 py-50">
+                            <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
+                                <form id="checkusers">
+                                    <div id="divIC">
+                                        <h1 class="display-4 mb-10">
+                                            <a href="javascript:void(0);" onclick="kembali();">
+                                                <i class="fa fa-arrow-left mr-10" style="color: #7a5449;"></i>
+                                            </a>
+                                            Lupa Katalaluan
+                                        </h1>
+                                        <p class="mb-30">Sila Masukkan No. Kad Pengenalan</p>
+                                        <div class="form-row">
+                                            <div class="col-md-12 form-group mt-10">
+                                                <input id="no_kad_pengenalan_Semak" class="form-control" placeholder="No. Kad Pengenalan" value="" type="text" maxlength="12">
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" onclick="submit();" class="btn btn-primary btn-block" id="btn_daftar"><i id="icon_daftar" class="fa fa-search"></i> Semak</a>
+                                    </div>
+                                </form>
+                                <form id="checkusers3">
+                                    <div id="divReset" class="d-none">
+                                        <h1 class="display-4 mb-10">
+                                            <a href="javascript:void(0);" onclick="kembali();">
+                                                <i class="fa fa-arrow-left mr-10" style="color: #7a5449;"></i>
+                                            </a>
+                                            Lupa Katalaluan
+                                        </h1>
+                                        <p class="mb-30">Katalaluan Baharu</p>
+                                        <div class="form-row">
+                                            <div class="col-md-12 form-group mt-10">
+                                                <input id="no_kad_pengenalan_final" readonly class="form-control" placeholder="No. Kad Pengenalan" value="" type="text" maxlength="12">
+                                            </div>
+                                            <div class="col-md-12 form-group mt-10">
+                                                <div class="input-group">
+                                                   <input type="password" class="form-control" name="katalaluan" id="katalaluan" placeholder="Katalaluan Baharu" value="" type="password" maxlength="12" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,14}$">
+                                                   <div class="input-group-prepend toggle-password">
+                                                       <span class="input-group-text fa fa-solid fa-eye"></span>
+                                                   </div>
+                                                </div>
+                                                <!-- <input id="katalaluan" class="form-control" placeholder="Katalaluan Baharu" value="" type="password" maxlength="12" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,14}$"> -->
+                                                <small>
+                                                    <table class="table table-bordered mt-2" style="background-color: pink;">
+                                                        <tr>
+                                                            <td>
+                                                                <span class="">
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Panjang katalaluan sekurang-kurangnya lapan (8) aksara;<br>
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Panjang maksimum 12 aksara;<br>
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Sekurang-kurangnya satu (1) huruf besar;<br>
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Sekurang-kurangnya satu (1) huruf kecil;<br>
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Sekurang-kurangnya satu (1) nombor;<br>
+                                                                    <i class="fa fa-exclamation-triangle text-danger"></i> Sekurang-kurangnya satu (1) simbol (@$!%*?&#);<br>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </small>
+                                            </div>
+                                            <div class="input-group">
+                                               <input type="password" class="form-control" name="ckatalaluan" id="ckatalaluan" placeholder="Pengesahan Katalaluan Baharu" value="" type="password" maxlength="12" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,14}$">
+                                               <div class="input-group-prepend toggle-password">
+                                                   <span class="input-group-text fa fa-solid fa-eye"></span>
+                                               </div>
+                                            </div>
+                                            <a href="javascript:void(0);" onclick="submitReset();" class="btn btn-primary btn-block mt-20" id="hantar"><i id="icon_hantar" class="fa fa-check"></i> Simpan</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 pa-0 d-none" id="after_check_ic">
+                        <div class="auth-form-wrap py-xl-0 py-50">
+                            <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
+                                <form id="register">
+                                    <h1 class="display-4 mb-10"><button class="btn btn-outline-primary" onclick="kembali();"><i class="fa fa-arrow-left"></i></button> Pendaftaran Akaun Pengguna</h1>
+                                    <p class="mb-30">Sila Lengkapkan Butiran Pendaftaran</p>
+                                    <div class="form-row" id="contentRegister"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="../config.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.min.js"></script>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="../dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="../dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="../dist/js/feather.min.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="../dist/js/init.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

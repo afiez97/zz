@@ -1,0 +1,81 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="col-xs-12">
+                        <h5 class="txt-dark">
+                            <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                            <span id="nama_penilaian_1" class="text-uppercase">Senarai Penilaian</span>
+                        </h5>
+                    </div> 
+                    <hr>
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button id="buttonDaftarPenilaian" type="button" alt="default" class="btn btn-primary hidden" ><i class="fas fa-plus"></i>  Daftar Penilaian</button>
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <h6 class="d-flex justify-content-end">JUMLAH: <span class="ms-1 row-count"></span></h6>
+                    <div class="table-wrap">
+                        <textarea class="hidden" id="dataSenaraiPenilaian"></textarea>
+                        <table id="listSenaraiPenilaian" class="table" data-sorting="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div id="modaldaftarpenilaian" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Daftar Penilaian Baharu</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <form id="register"> 
+                    <div class="modal-body row">
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="nama_penilaian" class="control-label mb-10"><span class="text-danger">*</span> Kategori Penilaian:</label>
+                            <select id="FK_kategori_penilaian" name="FK_kategori_penilaian" class="form-control" required></select>                            
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="nama_penilaian" class="control-label mb-10"><span class="text-danger">*</span> Nama Penilaian:</label>
+                            <textarea type="text" placeholder="Nama Penilaian" class="form-control" required id="nama_penilaian" name="nama_penilaian"></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="kod_penilaian" class="control-label mb-10">Kod Penilaian:</label>
+                            <input type="text" placeholder="Kod Penilaian" maxlength="10" class="form-control" id="kod_penilaian" name="kod_penilaian">
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="FK_kluster" class="control-label mb-10"><span class="text-danger">*</span> Program/Pusat:</label>
+                            <!-- <select id="FK_kluster" name="FK_kluster" class="form-control" required></select>-->
+                            <input type="text" id="FK_kluster" class="form-control hidden">
+                            <input type="text" id="nama_kluster" readonly class="form-control">
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="logo" class="control-label mb-10">Logo:</label>
+                            <br/>
+                            <img width="200px" src="../../api_penilaian/public/logo/default/JATA_NEGARA_MALAYSIA.png" class="img-fluid img-thumbnail" id="logo_1">
+                            <div id="divLogo" class="input-group spinner mt-2" data-bs-trigger="spinner">                                    
+                                <span class="input-group-text"><i class=" text-muted material-icons">add_a_photo</i></span>
+                                <span  id="btn-upload" class="input-group-text input-info btn-info" style="cursor:pointer"> <a class="text-white " id="url-logo" href="javascript:void(0);" >Muat Naik</a> </span>
+                            </div>
+                            <input type="file" id="logo" style="display:none">
+
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Kembali</button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+</div>
+<script src="../pengurusan_penilaian/pen_list_penilaian.js"></script>

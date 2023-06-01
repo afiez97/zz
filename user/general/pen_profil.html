@@ -1,0 +1,95 @@
+<!-- Bootstrap Dropzone CSS -->
+<link href="../vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css"/>
+
+<!-- Bootstrap Dropzone CSS -->
+<link href="../vendors/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css"/>
+
+<div class="hk-pg-header">
+    <div>
+        <h2 class="hk-pg-title font-weight-600">PROFIL PENGGUNA</h2>
+    </div>
+</div>
+<!-- /Title -->
+
+<!-- Row -->
+<div class="row" style="display: block;">
+    <div class="card" style="display: block;">
+        <div class="card-body">
+            <form id="updateprofil">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="col-lg-12 col-md-12 mb-4">
+                            <div class="form-group">
+                                <label class="control-label text-left col-md-12 mb-3">Gambar Pengguna</label>
+                                <img width="100%" src="../../api_penilaian/public/gambar/default.png" class="img-fluid img-thumbnail" id="gambar_original">
+                                <!-- <div id="divLogo" class="input-group spinner mt-2" data-bs-trigger="spinner">                                    
+                                    <span class="input-group-text"><i class=" text-muted material-icons">add_a_photo</i></span>
+                                    <span  id="btn-upload" class="input-group-text input-info btn-info" style="cursor:pointer"> <a class="text-white " id="url_gambar" href="javascript:void(0);" >Muat Naik</a> </span>
+                                </div>
+                                <input class="form-control d-none" type="file" id="gambar"> -->
+                                <div  class="row">
+                                    <div class="col-sm">
+                                        <input type="file" id="gambar" class="dropify" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="col-lg-6 col-md-12 mb-4 d-none">
+                            <div class="form-group">
+                                <label class="control-label text-left col-md-12 mb-3">No. Kad Pengenalan</label>
+                                <input class="form-control d-none" readonly type="text" required id="id_users">
+                                <input class="form-control" readonly type="text" required id="no_kad_pengenalan" placeholder="No. K/P" maxlength="12">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="form-group">
+                                <label class="control-label text-left col-md-12 mb-3">Emel Peribadi</label>
+                                <input class="form-control" type="text" id="emel" placeholder="Emel Peribadi">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="form-group">
+                                <label class="control-label text-left col-md-12 mb-3">Emel Rasmi</label>
+                                <input class="form-control" type="text" id="emel_kerajaan" placeholder="Emel Kerajaan">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="form-group">
+                                <label class="control-label text-left col-md-12 mb-3">No. Telefon Rasmi</label>
+                                <input class="form-control" type="text" id="notel_kerajaan" placeholder="No. Telefon Kerajaan">
+                            </div>
+                        </div>                                    
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button class="btn btn-primary btn-round">Kemaskini Profil</button>
+                </div>
+            </form>
+            <!-- <div class="row">
+                <div class="col-xl-12">
+                    <section class="hk-sec-wrapper">
+                        <h5 class="hk-sec-title">Gambar Pengguna</h5>
+                        <div  class="row">
+                            <div class="col-sm">
+                                <input type="file" id="input-file-now" class="dropify" />
+                            </div>
+                        </div>
+                    </section>
+                </div>	
+            </div>             -->
+        </div>
+    </div>
+</div>
+	
+<!-- Dropzone JavaScript -->
+<script src="../vendors/dropzone/dist/dropzone.js"></script>
+
+<!-- Dropify JavaScript -->
+<script src="../vendors/dropify/dist/js/dropify.min.js"></script>
+
+<!-- Form Flie Upload Data JavaScript -->
+<script src="../dist/js/form-file-upload-data.js"></script>
+
+<script src="../general/pen_profil.js"></script>

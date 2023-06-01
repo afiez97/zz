@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xl-12 pa-0">
+        <section class="hk-sec-wrapper">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table width="100%" class="table table-bordered" style="border: 1px solid black; font-size: 11px;">
+                                <!-- <tr>
+                                    <td colspan="6" class="justify-content-center" style="border: 1px solid black; font-size: 11px; font-weight: bold;">BAHAGIAN <span id="kod_set"></span></td>
+                                </tr> -->
+                                <tr>
+                                    <td colspan="6" class="justify-content-center" style="border: 1px solid black; font-size: 11px;"><span style="font-weight: bold;" id="text_nama_penilaian">NAMA PENILAIAN</span> (<span id="text_kod_siri_penilaian">KOD SIRI PENILAIAN</span>)</td>
+                                </tr>
+                                <tr>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;">JUMLAH SOALAN</td>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;"><span id="total_soalan"></span></td>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;">JUMLAH DIJAWAB</td>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;"><span id="total_jawab">0</span></td>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;">TEMPOH MASA</td>
+                                    <td class="justify-content-center" style="border: 1px solid black; font-size: 11px;"><span id="total_masa">1 JAM 30 MINIT</span></td>
+                                </tr>
+                            </table>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <button class="btn btn-circle bg-white btn-outline-dark"></button><span class="badge rounded-pill bg-white text-dark">Soalan Belum Dilihat /Dijawab</span>
+                                    <button class="btn btn-circle bg-danger btn-outline-dark"></button><span class="badge rounded-pill bg-white text-dark">Soalan Sedang Dijawab</span>
+                                    <button class="btn btn-circle bg-success btn-outline-dark"></button><span class="badge rounded-pill bg-white text-dark">Soalan Sudah Dijawab</span>
+                                    <button class="btn btn-circle bg-yellow btn-outline-dark"></button><span class="badge rounded-pill bg-white text-dark">Soalan Sudah Dilihat Belum Dijawab</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <table class="table">
+                                        <tr>
+                                            <td style="text-align: center;">HARI<br><span id="countdown_masa_hari"></span></td>
+                                            <td style="text-align: center;">JAM<br><span id="countdown_masa_jam"></span></td>
+                                            <td style="text-align: center;">MINIT<br><span id="countdown_masa_minit"></span></td>
+                                            <td style="text-align: center;">SAAT<br><span id="countdown_masa_saat"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="col-md-9" id="content-soalan"></div>
+                                <div class="col-md-3" id="overview-soalan">
+                                	<div id="my_camera"></div>
+                                	<!-- <img id="my_image"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="../vendors/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="../vendors/webcam/webcam.min.js"></script>
+<script src="soalan.js"></script>

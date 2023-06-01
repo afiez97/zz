@@ -1,0 +1,130 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="txt_nama_penilaian" class="text-uppercase">MARKAH SET SOALAN</span>                                
+                            </h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr><th width="10%">Kategori Penilaian</th><td colspan="3" class="" id="txt_nama_kategori_penilaian"></td></tr>
+                                        <tr><th>Kod Siri Penilaian</th><td colspan="3" id="txt_kod_siri_penilaian"></td></tr>
+                                        <tr><th rowspan="3">Penyelaras</th>
+                                            <td><p><i class="fa fa-user text-primary"></i> <span id="txt_nama_penyelaras"></span></p></td>
+                                            <td><p><i class="fa fa-phone text-info"></i> <span id="txt_notel_kerajaan_penyelaras"></span></p></td>
+                                            <td><i class="fa fa-envelope text-warning"></i> <span id="txt_emel_kerajaan_penyelaras"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                            
+                        </div>                                                
+                    </div>
+                    <div class="row">
+                        <h5><i class="fa fa-envelope"></i> Senarai Soalan</h5>
+                        <div class="col-md-12">
+                            <table id="list_setSiri" class="table table-bordered table-striped"></table>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="btn_setSoalan" class="btn btn-primary"><i class="fa fa-plus-circle"></i> SET SOALAN</button>
+                            <button id="btn_rawak" class="btn btn-primary btn-simple"><i class="fa fa-plus-circle"></i> RAWAK SOALAN</button>&nbsp;<small class="text-danger" id="text_msg"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="add_setSoalan" class="card mb-3 d-none">
+                <div class="card-header bg-primary"><h6 class="text-white pt-2"><i class="fa fa-plus-circle"></i> Set Soalan</h6></div>
+                <div class="body">
+                    <form id="form_set">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="text" name="search_siri_soalan" id="search_siri_soalan" class="form-control mb-3" placeholder="Carian Soalan..." >                                        
+                                <div class="mt-3" id="list_siriSoalan"></div>                            
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5><u>SET <span id="set_soalan_key">A</span></u></h5><br/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a onclick="window.location.reload()" id="submit_btn" name="submit_btn" class="btn btn-primary float-end">Selesai <i class="fa fa-save"></i></a>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ul id="bahagian_list" class="nav nav-tabs"></ul>
+                                        <button type="submit" id="next_btn" name="next_btn" class="btn btn-primary btn-simple">Seterusnya <i class="fa fa-arrow-right"></i></button>
+                                        <input type="text" name="bahagian_set" id="bahagian_set" required class="form-control border border-primary" placeholder="BAHAGIAN" />
+                                        <br/>
+                                        <div id="soalan_bahagian" class="tab-content"></div>                                      
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="dd">
+                                            <ol class="dd-list" id="list_data_select"></ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea class="form-control d-none" id="latest_list">[]</textarea>
+                                        <input type="hidden" readonly name="id_set_soalan" id="id_set_soalan">
+                                        <input type="hidden" readonly name="edit" id="edit" value="no">
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="soalan_rawak">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b>Jana Soalan Secara Rawak</b>
+            </div>
+            <hr>
+            <form id="form_janaRawak">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="bil_set">Bilangan Set Soalan</label>
+                            <select name="bil_set" id="bil_set" class="form-control mb-3" required></select>
+                        </div>
+                        <div class="col-6">
+                            <label for="total_soalan">Jumlah Soalan</label>
+                            <input type="number" name="total_soalan" id="total_soalan" class="form-control" value="1" min="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Jana</button>
+                    <button data-bs-dismiss="modal" class="btn btn-simple">Kembali</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../assets/tinymce/tinymce.min.js"></script>
+<script src="../assets/plugins/nestable/jquery.nestable.js"></script>
+<!-- <script src="../assets/js/pages/forms/form-wizard.js"></script> -->
+<script src="../siri_penilaian/pen_view_markah_set_soalan.js"></script>

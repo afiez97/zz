@@ -1,0 +1,126 @@
+<div class="row mb-5" id="div1">
+    <div class="col-12 mb-3">
+        <h4>1. Maklumat Diri</h4>
+    </div>
+    <div class="col-12 mb-3">
+        <label>No. Kad Pengenalan</label>
+        <input type="text" class="form-control" id="no_kad_pengenalan" placeholder="No K/P" required
+            data-mask="999999999999" readonly>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Gelaran</label>
+        <select class="form-control c-select success" id="FK_gelaran" required></select>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Nama</label>
+        <input type="text" class="form-control" id="nama" placeholder="Nama" required>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 kerajaan" style="display: none;">
+        <label>Emel Rasmi (Pejabat)</label>
+        <input type="text" class="form-control" id="emel_kerajaan" placeholder="Emel Rasmi">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 kerajaan" style="display: none;">
+        <label>No. Telefon Rasmi (Pejabat)</label>
+        <input type="text" class="form-control" id="notel_kerajaan" placeholder="No. Telefon">
+    </div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20">
+        <button class="btn btn-primary form-control" onclick="div('1','next');"> <span class="icon-label"></span><i class="fa fa-arrow-right"></i></button>
+    </div>
+</div>
+<div class="row mb-5 d-none" id="div2">
+    <div class="col-12 mb-3">
+        <h4>2. Maklumat Tempat Bertugas</h4>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Nama Jawatan</label>
+        <input type="text" class="form-control" id="nama_jawatan" placeholder="Nama Jawatan" required>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 kerajaan" style="display: none;">
+        <label for="FK_kementerian">Kementerian</label>
+        <select class="form-control c-select" id="FK_kementerian"></select>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 kerajaan" style="display: none;">
+        <label for="FK_kat_agensi">Kategori Agensi</label>
+        <select class="form-control c-select" id="FK_kat_agensi"></select>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 kerajaan" style="display: none;">
+        <label for="FK_agensi">Agensi</label>
+        <select class="form-control c-select" id="FK_agensi"></select>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3" style="display: none;">
+        <label for="kategori_perkhidmatan">Kategori Perkhidmatan</label>
+        <input type="text" class="form-control" id="kategori_perkhidmatan">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3" style="display: none;">
+        <label for="skim">Skim</label>
+        <input type="text" class="form-control" id="skim">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3" style="display: none;">
+        <label for="taraf_jawatan">Taraf Jawatan</label>
+        <select class="form-control c-select" id="taraf_jawatan"></select>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 swasta" style="display: none;">
+        <label for="nama_majikan">Nama Majikan</label>
+        <input type="text" class="form-control" id="nama_majikan" placeholder="Nama Majikan">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 swasta" style="display: none;">
+        <label for="emel_majikan">Emel Majikan</label>
+        <input type="text" class="form-control" id="emel_majikan" placeholder="Emel Majikan">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3 swasta" style="display: none;">
+        <label for="notel_majikan">No. Telefon Majikan</label>
+        <input type="text" class="form-control" id="notel_majikan" placeholder="No. Telefon Majikan">
+    </div>
+    <div class="col-3 mb-20">
+        <button class="btn btn-primary form-control" onclick="div('2','back');"> <span class="icon-label"></span><i class="fa fa-arrow-left"></i></button>
+    </div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20">
+        <button class="btn btn-primary form-control" onclick="div('2','next');"> <span class="icon-label"></span><i class="fa fa-arrow-right"></i></button>
+    </div>
+</div>
+<div class="row mb-5 d-none" id="div3">
+    <div class="col-12 mb-3">
+        <h4>2. Tetapan Katalaluan</h4>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Emel</label>
+        <input type="text" class="form-control" id="emel" placeholder="Emel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>No. Telefon</label>
+        <input type="text" class="form-control" id="notel" placeholder="No. Telefon">
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Katalaluan</label>
+        <input type="password" class="form-control" id="katalaluan" placeholder="Katalaluan" required>
+        <!-- <input type="password" class="form-control" id="katalaluan" placeholder="Katalaluan" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$" required> -->
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label>Pengesahan Katalaluan</label>
+        <input type="password" class="form-control" id="ckatalaluan" placeholder="Katalaluan" required>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 mb-3">
+        <label class="adomx-checkbox success">
+            <input type="checkbox"> <i class="icon" style="vertical-align: top;"></i>
+            Saya mengaku bahawa semua keterangan yang dinyatakan adalah <strong>BENAR</strong>.
+            Sekiranya kenyataan yang diberikan TIDAK BENAR, pihak agensi berhak membatalkan sebarang
+            permohonan yang dibuat.
+        </label>
+    </div>
+    <div class="col-3 mb-20">
+        <button class="btn btn-primary form-control" onclick="div('3','back');"> <span class="icon-label"></span><i class="fa fa-arrow-left"></i></button>
+    </div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-3 mb-20"></div>
+    <div class="col-12 mt-10"><button type="submit" class="btn btn-primary btn-block" id="daftar">Daftar Pengguna</button></div>
+</div>
+
+<!-- Plugins & Activation JS For Only This Page -->
+<!-- <script src="index.js"></script> -->
+<script src="daftar.js"></script>

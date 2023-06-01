@@ -1,0 +1,236 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Example Tab -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="txt-dark">
+                                    <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                    Peranan & Capaian
+                                </h5>
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <span id="li-Daftar"><button id="tab-daftar" class="btn btn-primary" aria-expanded="false"><i class="fas fa-plus"></i> <span id="textDaftar"></span></button></span>
+                            </div>
+                        </div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li id="li-SuperAdmin" class="nav-item"><a class="nav-link hidden" data-bs-toggle="tab" onclick="triggerTabContent('SuperAdmin')" href="#dataSuperAdmin" id="superadmin"><i class="fas fa-user me-2"></i> <span class="hidden-mobile"> Senarai Super Admin</span></a></li>
+                            <li id="li-PTLatihan" class="nav-item"><a class="nav-link hidden" data-bs-toggle="tab" onclick="triggerTabContent('PTLatihan')" href="#dataPTLatihan" id="ptlatihan"><i class="fas fa-user me-2"></i> <span class="hidden-mobile"> Senarai Pegawai Tadbir Latihan</span></a></li>
+                            <li id="li-PPPenilaian" class="nav-item"><a class="nav-link hidden" data-bs-toggle="tab" onclick="triggerTabContent('PPPenilaian')" href="#dataPPPenilaian" id="pppenilaian"><i class="fas fa-user me-2"></i> <span class="hidden-mobile"> Senarai Pegawai Penyelaras Penilaian</span></a></li>
+                            <!-- <li id="li-Daftar" class="justify-content-end hidden"><button id="tab-daftar" class="btn btn-primary" aria-expanded="false"><span class="ti-plus"></span> Daftar <span id="textDaftar"></span></button> </li> -->
+                            <!-- <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#home">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#profile">PROFILE</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#messages">MESSAGES</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#settings">SETTINGS</a></li> -->
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane show hidden" role="tabpanel" id="dataSuperAdmin">
+                                <div class="table-wrap">
+                                    <textarea class="hidden" id="dataListSuperAdmin"></textarea>
+                                    <table id="listSuperAdmin" class="table table-striped table-responsive" data-sorting="true"></table>
+                                </div>
+                            </div>
+                            <div class="tab-pane show hidden" role="tabpanel" id="dataPTLatihan">
+                                <div class="table-wrap">
+                                    <textarea class="hidden" id="dataListPTLatihan"></textarea>
+                                    <table id="listPTLatihan" class="table table-striped table-responsive" data-sorting="true"></table>
+                                </div>
+                            </div>
+                            <div class="tab-pane show hidden" role="tabpanel" id="dataPPPenilaian">
+                                <div class="table-wrap">
+                                    <textarea class="hidden" id="dataListPPPenilaian"></textarea>
+                                    <table id="listPPPenilaian" class="table table-striped table-responsive" data-sorting="true"></table>
+                                </div>
+                            </div>
+                            <!-- <div role="tabpanel" class="tab-pane in active" id="home"> <b>Home Content</b>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile"> <b>Profile Content</b>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages"> <b>Message Content</b>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="settings"> <b>Settings Content</b>
+                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
+                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
+                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
+                                    sadipscing mel. </p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Example Tab --> 
+        <!-- Modal SA & PTL -->
+        <div id="check_noic" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="title">Semak Pengguna</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <small>* Sila masukkan no. kad pengenalan untuk semakan</small>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="send_noic" class="input-group">
+                                    <input type="text" pattern="[0-9]+" name="noic_check" id="noic_check" required class="form-control" maxlength="12" placeholder="Contoh: 000000000000">
+                                    <button id="semak_btn" type="submit" class="btn btn-primary btn-anim m-0"><i id="icon_semak" class="fas fa-search"></i><span class="btn-text"> Semak</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal SA & PTL -->
+        <div class="modal fade mt-100" id="reg-capaian">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form role="form" id="registerCapaian">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Daftar Rekod Capaian</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p id="nama_pegawai_capaian"></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                    <label for="FK_users_capaian">No. Kad Pengenalan</label>
+                                    <input list="FK_userss_capaian" readonly id="FK_users_capaian" class="form-control">
+                                    <datalist id="FK_userss_capaian"></datalist>
+                                    <input type="text" id="FK_user_capaian" class="hidden">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                    <label for="FK_agensi_capaian">Agensi</label>
+                                    <select tabindex="-1" aria-disabled="true" class="form-control" id="FK_agensi_capaian"></select>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                    <label for="FK_peranan_capaian">Peranan</label>
+                                    <select class="form-control" required id="FK_peranan_capaian"></select>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12 hidden" id="divKluster">
+                                    <label for="FK_peranan_capaian">Program/Pusat</label>
+                                    <input class="form-control hidden" required id="FK_kluster_capaian">
+                                    <input class="form-control" readonly id="nama_kluster_capaian">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit"><i class="ti-check"></i> Simpan</button>
+                            <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- register Users-->
+        <div class="modal fade mt-100" id="register_users" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">Daftar Pengguna Sistem</div>
+                    <form id="registergov">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 mb-10">
+                                    <b>Maklumat Pengguna</b>
+                                    <table class="table table-striped" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td width="50%">
+                                                    <b>Nama</b><br>
+                                                    <span id="nama_text_add" style="text-transform: uppercase;"></span>
+                                                </td>
+                                                <td width="50%">
+                                                    <b>No K/Pengenalan</b><br>
+                                                    <span id="noic_text_add"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>No Telefon</b><br>
+                                                    <span id="notel_text_add"></span>
+                                                </td>
+                                                <td>
+                                                    <b>Emel</b><br>
+                                                    <span id="emel_text_add"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-12">
+                                    <b>Maklumat Perkhidmatan</b>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-2">
+                                        <label for="nama_jawatan_add">Jawatan</label>
+                                        <input type="text" name="nama_jawatan" id="nama_jawatan_add" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 hidden">
+                                    <div class="form-group mt-2">
+                                        <label for="kategori_perkhidmatan_add">Lain-lain</label>
+                                        <input type="text" id="nama_add" class="form-control ">
+                                        <input type="text" id="emel_add" class="form-control ">
+                                        <input type="text" id="no_kad_pengenalan_add" class="form-control ">
+                                        <input type="text" id="notel_add" class="form-control ">
+                                        <input type="text" id="emel_kerajaan_add" class="form-control ">
+                                        <input type="text" id="notel_kerajaan_add" class="form-control ">
+                                        <input type="text" id="FK_gelaran_add" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-2">
+                                        <label for="FK_agensi_add">Kementerian</label>
+                                        <select class="form-select" id="FK_kementerian_add"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-2">
+                                        <label for="FK_agensi_add">Agensi</label>
+                                        <select class="form-select" id="FK_agensi_add"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-2">
+                                        <label for="FK_kluster_add">Program/Pusat</label>
+                                        <select class="form-select" id="FK_kluster_add"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mt-2">
+                                        <label for="FK_peranan_add">Peranan</label>
+                                        <select class="form-select" id="FK_peranan_add"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit" id="daftar"><i id="icon_Ya" class="ti-check"></i> Simpan</button>
+                            <!-- <button class="btn btn-primary" type="submit" id="daftar"><i id="icon_Ya" class="ti-check"></i> Simpan</button> -->
+                            <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Batal</button>
+                            <!-- <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Register user-->
+<script src="../pentadbir_sistem/capaian.js"></script>
+<script src="../pentadbir_sistem/pen_peranan_capaian.js"></script>

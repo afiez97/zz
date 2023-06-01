@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+<title>Pengurusan Penilaian</title>
+<!-- Favicon-->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/sweet-alert/sweetalert2.css" type="text/css" />
+<link rel="stylesheet" href="../assets/sweet-alert/sweetalert2.min.css" type="text/css" />
+
+<!-- Custom Css -->
+<link rel="stylesheet" href="../assets/css/main.css">    
+<link rel="stylesheet" href="../assets/css/color_skins.css">
+</head>
+<body data-alpino="theme-purple">
+<div class="authentication">
+    <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="company_detail">
+                        <h4 class="logo"><img src="../assets/images/logo.svg" alt="">Penilaian INTAN</h4>
+                        <h3><strong>Admin Penilaian</strong></h3>
+                        <p>
+							Selamat datang ke portal Admin Penilaian INTAN. Laman ini dikhaskan untuk Super Admin, Pegawai Tadbir Latihan (PTL), 
+							Pegawai Penyelaras Penilaian (PPP), dan Urusetia yang dilantik (Jawatankuasa Penggubal, Jawatankuasa Penilai, Panel Penilai)
+						</p>
+                    </div>                    
+                </div>
+                <div class="col-lg-5 col-md-12 offset-lg-1">
+                    <img src="../assets/images/JATA_NEGARA_MALAYSIA.png" alt="" width="30%"><br/><br/>
+                    <div class="card-plain">
+                        <div class="header">
+                            <h5>Log Masuk</h5>
+                        </div>
+                        <form class="form" id="login">
+                            <div class="input-group">
+                                <input type="text" id="no_kad_pengenalan" required class="form-control" placeholder="No. K/P" maxlength="12">
+                                <span class="input-group-addon"><i class="zmdi zmdi-account-circle"></i></span>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" id="katalaluan" required placeholder="Password" class="form-control" />
+                                <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span>
+                            </div>
+                            <!-- <div class="input-group">
+                                <select class="form-control hidden" required id="FK_capaian"></select>
+                            </div> -->
+							<div class="footer">
+								<button type="submit" class="btn btn-primary btn-round btn-block"><span id="text_submit">Log Masuk</span></button>
+							</div>                          
+                        </form>
+                        <a href="javascript:void(0);" id="lupakatalaluan" class="link">Lupa Katalaluan?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Jquery Core Js -->
+<script src="../assets/bundles/libscripts.bundle.js"></script>
+<script src="../assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script src="../assets/sweet-alert/sweetalert2.js"></script>
+<script src="../assets/sweet-alert/sweetalert2.min.js"></script>
+<script src="../config.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

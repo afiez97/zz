@@ -1,0 +1,52 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="txt-dark">Tetapan Penyelaras Penilaian</h5>                            
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <button id="buttonDaftarPenyelaras" class="btn btn-primary hidden" aria-expanded="false"><i class="fas fa-plus"></i>  Lantik Pegawai Penyelaras</button>
+                            <!-- <span id="li-Daftar"><button id="tab-daftar" class="btn btn-primary" aria-expanded="false"><i class="fas fa-plus"></i> Daftar <span id="textDaftar"></span></button></span> -->
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <div class="table-wrap">
+                        <textarea class="hidden" id="dataSenaraiPenyelaras"></textarea>
+                        <table id="listSenaraiPenyelaras" class="table" data-sorting="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div id="modaldaftarpenyelaras" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Semak Pengguna</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="send_noic" class="input-group">
+                                <input type="text" pattern="[0-9]+" name="noic_check" id="noic_check" required class="form-control form-sm" maxlength="12" placeholder="Contoh: 000000000000">
+                                <span class="input-group-btn">
+                                    <!-- <button id="semak_btn" class="btn btn-primary"><i id="icon_semak" class="fa fa-search"></i> Semak</button> -->
+                                    <button id="semak_btn" type="submit" class="btn btn-primary btn-anim m-0"><i id="icon_semak" class="fas fa-search"></i><span class="btn-text"> Semak</span></button>
+                                </span> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+</div>
+<script src="../tetapan_penilaian/pen_ttpn_penyelaras_penilaian.js"></script>

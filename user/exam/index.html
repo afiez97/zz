@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Brunette - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Contact: support@hencework.com
+
+License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Sistem Peperiksaan Online INTAN</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.css" type="text/css" />
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.min.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
+    </div>
+    <!-- /Preloader -->
+    
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper">
+	    <div class="hk-wrapper hk-horizontal-nav">
+            <nav class="navbar navbar-expand-xl navbar-dark fixed-top hk-navbar">
+                <a class="navbar-brand" href="javascript:void(0);">
+                    <img class="brand-img d-inline-block" height="35px" src="../dist/img/INTAN.png" alt="brand" />
+                </a>
+                <ul class="navbar-nav hk-navbar-content">
+                    <li class="nav-item dropdown dropdown-authentication">
+                        <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="media">
+                                <div class="media-img-wrap">
+                                    <!-- <div class="avatar">
+                                        <img src="dist/img/avatar12.jpg" alt="user" class="avatar-img rounded-circle">
+                                    </div> -->
+                                    <!-- <span class="badge badge-success badge-indicator"></span> -->
+                                </div>
+                                <div class="media-body">
+                                    <span id="text_nama_pengguna"></span>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" id="topRightDD" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+                            <a class="dropdown-item" href="javascript:void(0);" id="logKeluar"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log Keluar</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper hk-auth-wrapper">
+            <div class="container mt-55 pt-20" id="displaycontent">
+                <div class="row">
+                    <div class="col-xl-12 pa-0">
+                        <div class="auth-form-wrap pt-xl-0 pt-70">
+                            <!-- <div class="col-md-12">
+                                <h5 class="display-4 mb-10 text-center">SISTEM PEPERIKSAAN <span style="font-style: italic; font-weight: bold;">ONLINE</span></h5>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="auth-brand text-center d-block mb-20" id="divLogoUser">
+                                                <img class="brand-img" src="../dist/img/INTAN.png" width="100px" alt="brand" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <form id="login">
+                                                <h3 class="auth-brand text-center d-block mb-20"  id="divPenilaian">
+                                                    
+                                                </h3>
+                                                <div class="form-group" id="divArahan">
+            
+                                                </div>
+                                                <p class="mb-30 text-center"></p>
+                                                <div class="form-group" id="divForm">
+                                                    <input class="form-control mb-3" placeholder="No. Kad Pengenalan" maxlength="12" type="text" id="no_kad_pengenalan">
+                                                    <input class="form-control" id="katalaluan" placeholder="Katalaluan" type="password">
+                                                </div>
+                                                <div class="form-group">
+                                                </div>
+                                                <button class="btn btn-primary btn-block" type="submit">Log Masuk</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             -->
+                            
+                            <div class="auth-form w-xl-40 w-lg-65 w-sm-85 w-100">
+                                <div class="auth-brand text-center d-block mb-20" id="divLogoUser" >
+                                    <img class="brand-img" src="../dist/img/INTAN.png" width="100px" alt="brand" />
+                                </div>
+                                <form id="login">
+                                    <h1 class="auth-brand text-center d-block mb-20"  id="divPenilaian" style="text-transform: uppercase;"></h1>
+                                    <h5 class="mb-10 text-center ">SISTEM PEPERIKSAAN <span style="font-style: italic; font-weight: bold;">ONLINE</span></h5>
+                                    <div class="form-group" id="divArahan">
+
+                                    </div>
+                                    <p class="mb-30 text-center"></p>
+                                    <div class="form-group" id="divForm">
+                                        <!-- <input class="form-control mb-3" placeholder="No. Kad Pengenalan" maxlength="12" type="text" id="no_kad_pengenalan">
+                                        <input class="form-control" id="katalaluan" placeholder="Katalaluan" type="password">  -->
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <button class="btn btn-primary btn-block" type="submit">Log Masuk</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="../config.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.min.js"></script>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="../dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="../dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="../dist/js/feather.min.js"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="../vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="../dist/js/toggle-data.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="../dist/js/init.js"></script>
+	<script src="../vendors/webcam/webcam.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

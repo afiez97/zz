@@ -1,0 +1,47 @@
+<style>
+    .scroll {
+    max-height: 850px;
+    overflow-y: auto;
+    }
+</style>
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Takwim Penilaian</span>
+                            </h5>
+                        </div> 
+                        <div class="col-md-9" id="calendar"></div>
+                        <div class="col-md-3 scroll" id="monthlyEvent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab -->
+    <div class="modal fade bs-example-modal-lg" id="my-event">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><strong>Butiran Penilaian</strong></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body row"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/plugins/calendar/jquery-ui.min.js"></script>
+<script src="../assets/plugins/moment/moment.js"></script>
+<script src='../assets/plugins/calendar/dist/fullcalendar.min.js'></script>
+<script src="../takwim_penilaian/pen_takwim_penilaian.js"></script>
+<script src='../assets/plugins/calendar/dist/locale/ms.js'></script>

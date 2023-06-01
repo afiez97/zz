@@ -1,0 +1,50 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Senarai Permohonan Calon</span>       
+                            </h5>  
+                            <div class="table-responsive">
+                                <textarea class="hidden" id="dataPermohonanCalon"></textarea>
+                                <table id="listPermohonanCalon" class="table" data-sorting="true"></table>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalApprovePermohonan" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title">Butiran Penilaian</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+            </div>
+            <form id="approvalLulus"> 
+                <div class="modal-body">
+                    <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                        <label for="FK_sesi" required class="control-label mb-10">Sesi:</label>
+                        <div class="input-group">
+                            <select id="FK_sesi" required class="form-control"></select>
+                            <input type="text" id="enc_id_permohonan_penilaian" required class="form-control d-none"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="resetForm();">Tutup</button>                        
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../siri_penilaian/pen_permohonan_calon_siri_penilaian.js"></script>

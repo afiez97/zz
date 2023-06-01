@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Sistem Penilaian INTAN</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.css" type="text/css" />
+    <link rel="stylesheet" href="../vendors/sweet-alert/sweetalert2.min.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
+    </div>
+    <!-- /Preloader -->
+   
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper">
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper hk-auth-wrapper">
+            <header class="d-flex justify-content-between align-items-center">
+                <a class="d-flex auth-brand" href="#">
+                    <img class="brand-img mr-2" height="60px" src="../dist/img/JATA_NEGARA_MALAYSIA.png" alt="brand" />
+                    <img class="brand-img" height="60px" src="../dist/img/INTAN.png" alt="brand" />
+                </a>
+            </header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-5 pa-0">
+                        <div id="owl_demo_1" class="owl-carousel dots-on-item owl-theme">
+                            <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url(../dist/img/01.jpg);">
+                                <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                    <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                        <!-- <h1 class="display-3 text-white mb-20">Sistem Penilaian INTAN.</h1>
+                                        <p class="text-white">Sistem ini bla bla bla bla bla</p> -->
+                                    </div>
+                                </div>
+                                <div class="bg-overlay bg-trans-dark-50"></div>
+                            </div>
+                            <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url(../dist/img/02.jpg);">
+                                <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                    <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                        <!-- <h1 class="display-3 text-white mb-20">Selamat Datang!</h1>
+                                        <p class="text-white">Selamat Datang bla bla bla bla bla</p> -->
+                                    </div>
+                                </div>
+								<div class="bg-overlay bg-trans-dark-50"></div>
+                            </div>
+                            <div class="fadeOut item auth-cover-img overlay-wrap" style="background-image:url(../dist/img/03.jpg);">
+                                <div class="auth-cover-info py-xl-0 pt-100 pb-50">
+                                    <div class="auth-cover-content text-center w-xxl-75 w-sm-90 w-xs-100">
+                                        <!-- <h1 class="display-3 text-white mb-20">Selamat Datang!</h1>
+                                        <p class="text-white">Selamat Datang bla bla bla bla bla</p> -->
+                                    </div>
+                                </div>
+								<div class="bg-overlay bg-trans-dark-50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 pa-0">
+                        <div class="auth-form-wrap py-xl-0 py-50">
+                            <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-xs-100">
+                                <form id="login">
+                                    <h1 class="display-4 mb-10">Selamat Datang Ke Sistem Penilaian INTAN!</h1>
+                                    <!-- <p class="mb-30">Log masuk ke akaun untuk mulakan sesi.</p> -->
+                                    <div class="form-group mt-20">
+                                        <input class="form-control" placeholder="No. Kad Pengenalan" maxlength="12" type="text" id="no_kad_pengenalan">
+                                    </div>
+                                    <div class="form-group mt-10">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Katalaluan" type="password" id="katalaluan">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-block" type="submit">Log Masuk</button>
+                                    <!-- <p class="font-14 text-center mt-15"><a href="#">Lupa katalaluan?</a></p> -->
+                                    <!-- <div class="option-sep"></div> -->
+                                    <hr>
+                                    <p class="text-center"><a href="javascript:void(0);" id="reset">Lupa Katalaluan?</a></p><br>
+                                    <p class="text-center">Tiada Akaun? <a href="javascript:void(0);" id="register">Daftar Baharu</a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+	<!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="../config.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.js"></script>
+    <script src="../vendors/sweet-alert/sweetalert2.min.js"></script>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="../dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="../dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- Owl JavaScript -->
+    <script src="../vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="../dist/js/feather.min.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="../dist/js/init.js"></script>
+    <script src="../dist/js/login-data.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

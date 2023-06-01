@@ -1,0 +1,68 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Tetapan Akaun</span>
+                            </h5>
+                        </div> 
+                        <hr>
+                        <form id="updateprofil">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="col-lg-12 col-md-12 mb-4">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-md-12 mb-3">Gambar Pengguna</label>
+                                            <img width="200px" src="../../api_penilaian/public/gambar/default.png" class="img-fluid img-thumbnail" id="gambar_original">
+                                            <div id="divLogo" class="input-group spinner mt-2" data-bs-trigger="spinner">                                    
+                                                <span class="input-group-text"><i class=" text-muted material-icons">add_a_photo</i></span>
+                                                <span  id="btn-upload" class="input-group-text input-info btn-info" style="cursor:pointer"> <a class="text-white " id="url_gambar" href="javascript:void(0);" >Muat Naik</a> </span>
+                                            </div>
+                                            <input class="form-control d-none" type="file" id="gambar">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="col-lg-6 col-md-12 mb-4 d-none">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-md-12 mb-3">No. Kad Pengenalan</label>
+                                            <input class="form-control d-none" readonly type="text" required id="id_users">
+                                            <input class="form-control" readonly type="text" required id="no_kad_pengenalan" placeholder="No. K/P" maxlength="12">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mb-4">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-md-12 mb-3">Emel Peribadi</label>
+                                            <input class="form-control" type="text" id="emel" placeholder="Emel Peribadi">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mb-4">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-md-12 mb-3">Emel Rasmi</label>
+                                            <input class="form-control" type="text" id="emel_kerajaan" placeholder="Emel Kerajaan">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mb-4">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-md-12 mb-3">No. Telefon Rasmi</label>
+                                            <input class="form-control" type="text" id="notel_kerajaan" placeholder="No. Telefon Kerajaan">
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-round">Kemaskini Profil</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../general/pen_profil.js"></script>

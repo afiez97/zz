@@ -1,0 +1,61 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                Tetapan Kategori Lantikan
+                            </h5>
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <div class="table-wrap">
+                        <textarea class="hidden" id="dataKategoriUrusetia"></textarea>
+                        <table id="listKategoriUrusetia" class="table" data-sorting="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div class="modal fade mt-100" id="modalupdatekategoriurusetia">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Kemaskini Kategori Lantikan</h4>                    
+                </div>
+                <form id="update_kategori_urusetia">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group mt-2">
+                                    <label for="nama_kategori_urusetia">Nama Kategori Lantikan</label>
+                                    <input type="text" name="id_kategori_urusetia" id="id_kategori_urusetia" class="form-control hidden">
+                                    <input type="text" name="nama_kategori_urusetia" id="nama_kategori_urusetia" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mt-2">
+                                    <label for="polisi_capaian">Polisi Capaian</label><br>
+                                    <div id="polisi_capaian"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" id="update"><i id="icon_Ya" class="ti-check"></i> Simpan</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+</div>
+<script src="../assets/js/pages/forms/editors.js"></script>
+<script src="../tetapan_penilaian/pen_ttpn_kategori_urusetia.js"></script>

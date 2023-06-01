@@ -1,0 +1,572 @@
+<style>
+    .scroll {
+        max-height: 700px;
+        overflow-y: auto;
+    }
+</style>
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="txt-dark"><a href="javascript:void(0);" id="btnKembali"><i
+                                        class="fa fa-arrow-left"></i></a> SIRI BANK SOALAN
+                                <span style="float: right;">
+                                    <div class="col-md-12">
+                                        <button id="btn_addSoalan" class="btn btn-primary btn-sm"><i
+                                                class="fa fa-plus-circle"></i> Soalan</button>
+                                        <button id="btn_addSoalanBerantai" onclick="modalSoalanBerangkai(0)"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Soalan
+                                            Berangkai</button>
+                                    </div>
+                                </span>
+                            </h5>
+                            <div class="table-responsive hidden">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th width="10%">Kategori Penilaian</th>
+                                            <td colspan="3" class="" id="txt_nama_kategori_penilaian"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Kod Siri Penilaian</th>
+                                            <td colspan="3" id="txt_kod_siri_penilaian"></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="3">Penyelaras</th>
+                                            <td>
+                                                <p><i class="fa fa-user text-primary"></i> <span
+                                                        id="txt_nama_penyelaras"></span></p>
+                                            </td>
+                                            <td>
+                                                <p><i class="fa fa-phone text-info"></i> <span
+                                                        id="txt_notel_kerajaan_penyelaras"></span></p>
+                                            </td>
+                                            <td><i class="fa fa-envelope text-warning"></i> <span
+                                                    id="txt_emel_kerajaan_penyelaras"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+                    <!-- <div class="row">
+                        <div class="col-md-12">
+                            <button id="btn_addSoalan" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Soalan</button>
+                            <button id="btn_addSoalanBerantai" onclick="modalSoalanBerangkai(0)" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Soalan Berangkai</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- <div id="modalSoalanBerangkai" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="title">Daftar Soalan Berangkai</h4>
+                        </div>
+                        <form id="form_teks"> 
+                            <div class="modal-body row">                                
+                                <div class="mb-3">
+                                    <h6 class="text-info">Teks</h6>
+                                    <textarea id="teks_textarea" name="teks" class="tinymce_teks"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Kembali</button>                        
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="tab-content hidden" id="input_soalanBerangkai">
+                <div class="card mb-3">
+                    <!-- <form id="form_soalan"> -->
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <a href="javascript:void()" onclick="btnBatal()" class="btn btn-danger btn-link"><i
+                                        class="fa fa-arrow-left"></i> Kembali</a>
+                                <form id="form_teks">
+                                    <h5><i class="fa fa-plus-circle text-primary"></i> Soalan Berangkai</h5>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- <div class="mb-5"> -->
+                                            <h6 class="text-info">Teks</h6>
+                                            <textarea id="teks_textarea" name="teks" class="tinymce_teks"></textarea>
+                                            <!-- </div> -->
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <button type="submit"
+                                                class="btn btn-primary float-sm-end float-md-end float-lg-end float-xl-end">Simpan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="soalanBerangkai">
+                <div class="card mb-3">
+                    <!-- <form id="form_soalan"> -->
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="javascript:void()" onclick="btnBatal()" class="btn btn-danger btn-link"><i
+                                        class="fa fa-arrow-left"></i> Kembali</a>
+                                <h5><i class="fa fa-plus-circle text-primary"></i> Soalan Berangkai</h5>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <!-- <div class="mb-5"> -->
+                                        <h6 class="text-info">Teks</h6>
+                                        <div id="txt_teks" class="bg-light-default p-3"></div>
+                                        <span class="d-none" id="id_infodetails"></span>
+                                        <!-- </div> -->
+                                    </div>
+                                    <div class="col-md-4 p-3" id="list_btnSoalan">
+                                        <button id="btn_viewSoalanBerangkai" type="button"
+                                            class="btn btn-warning  btn-round btn-simple"
+                                            onclick="viewSoalanBerangkai(0)"><i
+                                                class="fa fa-plus-circle"></i>&nbsp;Soalan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+
+            <!-- Tab panes -->
+            <div id="tab_siri_soalan" class="tab-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-12">
+                                            <h5 class="">Bank Soalan<small style="float: right;">[<small
+                                                        id="count_soalan">0</small>&nbsp;Soalan]</small></h5>
+                                            <!-- <input type="text" name="search_bank_soalan" id="search_bank_soalan" class="form-control mb-3" placeholder="Carian Soalan..." > -->
+                                        </div>
+                                        <div class="col-12 scroll p-3">
+                                            <table id="table_list_soalan" class="table"></table>
+                                        </div>
+                                        <!-- <div id="list_soalan">
+                                            <i>Tiada Pilihan Soalan....</i>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-12">
+                                            <h5 class="">Senarai Soalan Yang Dipilih<small id="count_siri"
+                                                    style="float: right;">[0 Soalan]</small></h5>
+                                            <!-- <input type="text" name="search_siri_soalan" id="search_siri_soalan" class="form-control mb-3" placeholder="Carian Siri Soalan..." > -->
+                                        </div>
+                                        <div class="col-12 scroll p-3">
+                                            <table id="table_list_siri_soalan" class="table"></table>
+                                        </div>
+                                        <!-- <div id="list_siri_soalan">
+                                            <i>Tiada Pilihan Soalan....</i>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab_soalan" class="d-none">
+                <div class="card mb-5">
+                    <form id="form_soalan">
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="javascript:void()" id="btn_backSoalan" onclick="btnBatal()"
+                                        class="btn btn-danger btn-link hidden"><i class="fa fa-arrow-left"></i>
+                                        Kembali</a>
+                                    <h5><i class="fa fa-plus-circle text-primary"></i> Soalan</h5>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-5">
+                                                <h6 class="text-info">Soalan<br><b id="kod_soalan_upt"></b></h6>
+                                                <textarea id="soalan_textarea" name="soalan"
+                                                    class="tinymce_soalan"></textarea>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <h6 for="jenis_soalan">
+                                                                    <small class="text-danger">*&nbsp;</small>Kategori
+                                                                    Soalan
+                                                                </h6>
+                                                                <select name="jenis_soalan" id="jenis_soalan"
+                                                                    class="form-control" required></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <h6 for="pen_tahap">
+                                                                    <small class="text-danger">*&nbsp;</small>Tahap
+                                                                    Soalan
+                                                                </h6>
+                                                                <select name="tahap" id="pen_tahap" class="form-control"
+                                                                    required>
+                                                                    <option value="">- PILIH -</option>
+                                                                    <option value="MUDAH">- MUDAH -</option>
+                                                                    <option value="SEDERHANA">- SEDERHANA -</option>
+                                                                    <option value="SUKAR">- SUKAR -</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <h6 for="topik">Topik</h6>
+                                                                <input type="text" name="topik" id="pen_topik"
+                                                                    data-role="tagsinput">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <h6 for="markah"><small
+                                                                        class="text-danger">*&nbsp;</small>Markah Soalan
+                                                                </h6>
+                                                                <input type="number" value="1" id="markah" name="markah"
+                                                                    class="form-control mb-3" required />
+                                                                <div class="material-switch"><input
+                                                                        id="switch_displayMark" name="display_mark"
+                                                                        value="01" checked type="checkbox" />
+                                                                    <label for="switch_displayMark" id="label_mark"
+                                                                        class="label-success"></label> Papar Markah
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-5" id="divJawapan">
+                                                <h6 class="text-success">Jawapan</h6>
+                                                <input type="hidden" id="num_answers" name="num_answers" value="0" />
+                                                <div>
+                                                    <div class="card d-none" id="card_fileUpload">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-12 mb-3">
+                                                                    <div class="material-switch"><input id="choose_type"
+                                                                            name="choose_type" type="checkbox" />
+                                                                        <label for="choose_type" id="type_onoff"
+                                                                            class="label-success"></label> File tertentu
+                                                                        sahaja <i class="fa fa-question"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="col-md-6">
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_docx" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_docx" id="docx"
+                                                                            class="label-success"></label> Document
+                                                                        (.docx)
+                                                                    </div>
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_xlsx" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_xlsx" id="xlsx"
+                                                                            class="label-success"></label> Document
+                                                                        (.xlsx)
+                                                                    </div>
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_pdf" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_pdf" id="pdf"
+                                                                            class="label-success"></label> Document
+                                                                        (.pdf)
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_pptx" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_pptx" id="pptx"
+                                                                            class="label-success"></label> Document
+                                                                        (.pptx)
+                                                                    </div>
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_dwg" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_dwg" id="dwg"
+                                                                            class="label-success"></label> Document
+                                                                        (.dwg)
+                                                                    </div>
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_jpg" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_jpg" id="jpg"
+                                                                            class="label-success"></label> Document
+                                                                        (.jpg/png/jpeg)
+                                                                    </div>
+                                                                    <div class="material-switch mb-2"><input
+                                                                            id="choose_mp3" checked name="choose_type"
+                                                                            type="checkbox" />
+                                                                        <label for="choose_mp3" id="mp3"
+                                                                            class="label-success"></label> Document
+                                                                        (.mp3/mp4/wav)
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <label for="bil_fail">Bilangan <i>File
+                                                                            Upload</i></label>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <select name="bil_fail" id="bil_fail"
+                                                                        class="form-control">
+                                                                        <option value="">- Pilih -</option>
+                                                                        <option>1</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <a id="btn_addFileUpload" class="d-none"><i class="fa fa-plus-circle"></i> File Upload</a> -->
+                                                        </div>
+                                                    </div>
+                                                    <div id="content_jawapan" class="row"></div>
+                                                    <div class="mb-5">
+                                                        <div id="alert_jawapan" class="d-none" role="alert">
+                                                            <i class="fa fa-info-circle"></i> Tiada <i>input</i>
+                                                            jawapan...
+                                                        </div>
+                                                        <a id="btn_addJawapanObjektif"
+                                                            class="btn btn-info btn-simple"><i
+                                                                class="fa fa-plus-circle"></i> Jawapan</a>
+                                                        <a id="btn_addJawapanMulti" class="d-none"><i
+                                                                class="fa fa-plus-circle"></i> Jawapan</a>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div id="linearStruct" class="card d-none">
+                                                            <div class="card-header">
+                                                                <div class="col-md-6">
+                                                                    <!-- range scale 1- 5 -->
+                                                                    <div class="row g-2 align-items-center">
+                                                                        <div class="col-auto">
+                                                                            <select id="minScale"
+                                                                                onchange="LinearScale()"
+                                                                                class="form-select w-auto">
+                                                                                <option value="0">0</option>
+                                                                                <option value="1">1</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-auto">
+                                                                            <select id="maxScale"
+                                                                                onchange="LinearScale()"
+                                                                                class="form-select w-auto">
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+                                                                                <option value="6">6</option>
+                                                                                <option value="7">7</option>
+                                                                                <option value="8">8</option>
+                                                                                <option value="9">9</option>
+                                                                                <option value="10">10</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <!-- label scale start -->
+                                                                <div class="row">
+                                                                    <div class="col-7">
+                                                                        <div class="input-group mb-3">
+                                                                            <span id="textMinScale"
+                                                                                class="input-group-text">0</span>
+                                                                            <input id="nameScaleMin" type="text"
+                                                                                class="form-control bg-white text-uppercase"
+                                                                                placeholder="Label untuk 0-1" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- label scale end -->
+                                                                <div class="row">
+                                                                    <div class="col-7">
+                                                                        <div class="input-group mb-3">
+                                                                            <span id="textMaxScale"
+                                                                                class="input-group-text">2</span>
+                                                                            <input id="nameScaleMax" type="text"
+                                                                                class="form-control bg-white text-uppercase"
+                                                                                placeholder="Label untuk 2-10" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <button class="btn btn-primary"
+                                                                    onclick="LinearScale_2()">
+                                                                    Lihat Paparan Soalan
+                                                                </button>
+                                                            </div>
+                                                            <div id="card_linearfooter" style="height: 20vh"
+                                                                class="card-footer d-flex align-items-center justify-content-center text-muted">
+                                                                <div class="text-center align-items-center">
+                                                                    <div id="respon" class="d-inline"></div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="row">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                        </div>
+                                                    </div>
+                                                    <div id="tabRadio" class="col-10 aligns-items-center"></div>
+                                                    <div id="tabChecked" class="col-10 aligns-items-center d-none">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="mb-5">
+                                                    <h6 class="text-success">Jawapan</h6>
+                                                    <input type="hidden" id="num_answers" name="num_answers" value="0" />
+                                                    <div>
+                                                        <div id="content_jawapan" class="row"></div>
+                                                        <div class="mb-5">
+                                                            <div id="alert_jawapan" class="d-none" role="alert">
+                                                                <i class="fa fa-info-circle"></i> Tiada <i>input</i> jawapan...
+                                                            </div>
+                                                            <a id="btn_addJawapanObjektif" class="btn btn-info btn-simple"><i class="fa fa-plus-circle"></i> Jawapan</a>
+                                                            <a id="btn_addJawapanMulti" class="d-none"><i class="fa fa-plus-circle"></i> Jawapan</a>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div> -->
+                                            <div class="mb-5 hidden" id="divSkemaJawapan">
+                                                <h6 class="text-warning">Skema Jawapan</h6>
+                                                <div id="alert_skema" class="alert alert-dark text-dark" role="alert">
+                                                    <i class="fa fa-info-circle"></i> Tiada <i>input</i> skema
+                                                    jawapan...
+                                                </div>
+                                                <textarea id="skema_jawapan" name="skema" class="hidden"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-3">
+                                    <h5><i class="fa fa-cog"></i> Penyelenggaraan Soalan</h5>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Markah Soalan</h6>
+                                            <input type="number" id="markah" name="markah" class="form-control mb-3" />
+                                            <div class="material-switch"><input id="switch_displayMark" name="display_mark" value="01" checked type="checkbox"/>
+                                                <label for="switch_displayMark" id="label_mark" class="label-success"></label> Papar Markah
+                                            </div>                                          
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" id="btnSimpan" class="btn btn-primary"><i
+                                            class="fa fa-save"></i> SIMPAN</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="view_soalanBerangkai">
+                <div class="card mb-5">
+                    <form id="form_soalan">
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-md-9 ">
+                                    <h5><i class="fa fa-plus-circle text-primary"></i> Soalan</h5>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-5">
+                                                <h6 class="text-info">Soalan</h6>
+                                                <div class="mb-5" id="txt_soalan"></div>
+                                                <h6 class="text-success">Jawapan</h6>
+                                                <div id="txt_jawapan"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered table-striped mt-5">
+                                                <tr>
+                                                    <th class="bg-light-default">Kategori Soalan</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-2" id="txt_kategori_soalan"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bg-light-default">Tahap Soalan</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-2" id="txt_tahap_soalan"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bg-light-default">Topik</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-2" id="txt_topik"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bg-light-default">Markah Soalan</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-2" id="txt_mark"></td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/tinymce/tinymce.min.js"></script>
+<!-- <script src="../assets/tinymce/init.tinymce.js"></script> -->
+<script src="../assets/bundles/tagsinput.bundle.js"></script>
+<script src="../siri_penilaian/loads_data_bank_soalan_siri_penilaian.js"></script>
+<script src="../siri_penilaian/pen_peng_bank_soalan_siri_penilaian.js"></script>

@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <form id="form-soalan">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="txt-dark">
+                                    <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                    <span id="nama_penilaian_1" class="text-uppercase">Penilaian</span>                                
+                                </h5>                                                         
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>Soalan</h6>
+                                <form id="form_soalan">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label for="jenis_soalan">
+                                                            Kategori Soalan
+                                                        </label>
+                                                        <select name="jenis_soalan" id="jenis_soalan" class="form-control" required>
+                                                            <option value="">- PILIH -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label for="pen_tahap">
+                                                            Tahap Soalan
+                                                        </label>
+                                                        <select name="pen_tahap" id="pen_tahap" class="form-control" required>
+                                                            <option value="">- PILIH -</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="topik">Topik</label>
+                                                <input type="text" name="pen_topik" id="pen_topik" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="ckeditor">Soalan</label>
+                                                <textarea id="ckeditor" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" id="btnSimpan" class="btn btn-primary"><i class="fa fa-save"></i> SIMPAN</button>
+                                            <button type="reset" id="btnBatal" class="btn secondary"><i class="fa fa-chain"></i> BATAL</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>List Soalan</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped" id="listSoalanToday"></table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/pages/forms/editors.js"></script>
+<script src="../pengurusan_penilaian/pen_list_soalan.js"></script>

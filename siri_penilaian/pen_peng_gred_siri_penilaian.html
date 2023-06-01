@@ -1,0 +1,140 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Pengurusan Gred</span>      
+                            </h5>
+                            <div class="mb-5">
+                                <h6 class="text-info mb-3">Mesej Tamat Penilaian</h6>
+                                <textarea id="tamat_penilaian_textarea" name="tamat_penilaian" class="tinymce_soalan"></textarea>
+                            </div>                            
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="mb-5">
+                                <form id="form_update">
+                                    <h6 class="text-info mb-3">Kriteria Penggredan</h6>
+                                    <div class="col-6 alert alert-info">
+                                        <div class="row">
+                                            <p class="col-1">
+                                                <small><i class="fas fa-info"></i></small>
+                                            </p>
+                                            <div class="col-11">
+                                                <h6 class="text-white">Set Grading Criteria</h6>
+                                                Tentukan kriteria penggredan sekarang atau setelah semua markah ujian tersedia.
+                                                <!-- Define grading criteria now or when all test scores are available. -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Skor Maksimum (100%): </p>
+                                    <!-- <p>Skor Maksimum (100%): 0p. </p> -->
+    
+                                    <p class="">
+                                        <div class="material-switch">
+                                            <input id="switch_pass" onclick="pass_mark()" type="checkbox"/>
+                                            <label for="switch_pass" id="label_switch_pass" class="label-success"></label>
+                                            <span style="font-size: 8px;" id="text_statusrekodpass" class="badge badge-secondary"></span>
+                                            Markah Lulus
+                                        </div>
+                                    </p>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label for="pass_value">Nilai</label>
+                                            <input id="pass_value" disabled type="number" class="form-control">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="pass_unit">Unit</label>
+                                            <select id="pass_unit" disabled class="form-control">
+                                                <option value="%">%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+    
+                                    <p class="row">
+                                        <div class="material-switch">
+                                            <input id="switch_range" onclick="range()" type="checkbox"/>
+                                            <label for="switch_range" id="label_switch_range" class="label-success"></label>
+                                            <span style="font-size: 8px;" id="text_statusrekodrange" class="badge badge-secondary"></span>
+                                            Tentukan skala penggredan mengikut peratus
+                                            <!-- Define grade ranges based on percents -->
+                                        </div>
+                                    </p>
+                                    <div class="col-6 mb-5 hidden" id="div_range">
+                                        <div class="card mb-3">
+                                            <div class="card-header">
+                                                <h6>SKALA</h6>
+                                            </div>
+                                            <div class="body">
+                                                <div class="mb-3" id="div_add_range"></div>
+                                                <a class="btn btn-primary" id="add_range"><i class="fas fa-plus"></i> Tambah Skala</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">SIMPAN</button>
+                                </form>
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modaluptsiripenilaian" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Kemaskini Pengurusan Gred</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <form id="updates"> 
+                    <div class="modal-body">
+                        <div class="row">
+                            <span id="FK_kategori_penilaian" class="hidden"></span>
+                            <span id="FK_kluster" class="hidden"></span>
+                            <span id="FK_penilaian" class="hidden"></span>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="kod_penilaian" class="control-label mb-10">No. Siri Penilaian:</label>
+                            <div class="input-group">
+                                <!-- <select class="form-control" id="tahun" name="tahun" aria-placeholder="Tahun"></select> -->
+                                <input type="text" name='upt_tahun' id="upt_tahun" class="form-control"aria-placeholder="Tahun" readonly>
+                                <input readonly type="text" placeholder="Siri Penilaian" class="form-control" required id="upt_nosiri" name="upt_kod_siri_penilaian">
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_keterangan" class="control-label mb-10">Keterangan:</label>
+                            <textarea placeholder="Keterangan/Tujuan" class="form-control" required id="upt_keterangan" name="upt_keterangan"></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_jenis_penilaian" class="control-label mb-10">Jenis Penilaian:</label><br/>
+                            <div id="divJenisPenilaian">
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="resetForm();">Tutup</button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/tinymce/tinymce.min.js"></script>
+<!-- <script src="../assets/tinymce/init.tinymce.js"></script> -->
+<script src="../assets/bundles/tagsinput.bundle.js"></script> 
+<script src="../siri_penilaian/pen_peng_gred_siri_penilaian.js"></script>

@@ -1,0 +1,253 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h5 class="txt-dark">Senarai Lantikan</h5>                            
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <button id="buttonDaftarUrusetia" type="button" alt="default" class="btn btn-primary hidden" ><i class="fas fa-plus"></i>  Daftar Lantikan</button>
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <h6 class="d-flex justify-content-end">JUMLAH: <span class="ms-1 row-count"></span></h6>
+                    <div class="table-wrap">
+                        <textarea class="hidden" id="dataSenaraiUrusetia"></textarea>
+                        <table id="listSenaraiUrusetia" class="table" data-sorting="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div id="check_noic" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Semak Pengguna</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <small>* Sila masukkan no. kad pengenalan untuk semakan</small>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="send_noic" class="input-group">
+                                <input type="text" pattern="[0-9]+" name="noic_check" id="noic_check" required class="form-control form-sm" maxlength="12" placeholder="Contoh: 000000000000">
+                                <span class="input-group-btn">
+                                    <!-- <button id="semak_btn" class="btn btn-primary"><i id="icon_semak" class="fa fa-search"></i> Semak</button> -->
+                                    <button id="semak_btn" type="submit" class="btn btn-primary btn-anim m-0"><i id="icon_semak" class="fas fa-search"></i><span class="btn-text"> Semak</span></button>
+                                </span> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+    <!-- register Users-->
+    <div class="modal fade mt-100" id="register_users">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">Daftar Pengguna Sistem</div>
+                <form id="registergov">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-10">
+                                <b>Maklumat Pengguna</b>
+                                <table class="table table-striped" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td width="50%">
+                                                <b>Nama</b><br>
+                                                <span id="nama_text_add" required style="text-transform: uppercase;"></span>
+                                            </td>
+                                            <td width="50%">
+                                                <b>No K/Pengenalan</b><br>
+                                                <span id="noic_text_add" required></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>No Telefon</b><br>
+                                                <span id="notel_text_add" required></span>
+                                            </td>
+                                            <td>
+                                                <b>Emel</b><br>
+                                                <span id="emel_text_add" required></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-12">
+                                <b>Maklumat Perkhidmatan</b>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="nama_jawatan_add">Jawatan</label>
+                                    <input type="text" name="nama_jawatan" required id="nama_jawatan_add" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 hidden">
+                                <div class="form-group mt-2">
+                                    <label for="kategori_perkhidmatan_add">Lain-lain</label>
+                                    <input type="text" id="nama_add" class="form-control ">
+                                    <input type="text" id="emel_add" class="form-control ">
+                                    <input type="text" id="no_kad_pengenalan_add" class="form-control ">
+                                    <input type="text" id="notel_add" class="form-control ">
+                                    <input type="text" id="emel_kerajaan_add" class="form-control ">
+                                    <input type="text" id="notel_kerajaan_add" class="form-control ">
+                                    <input type="text" id="FK_gelaran_add" class="form-control ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_agensi_add">Kementerian</label>
+                                    <select class="form-control" id="FK_kementerian_add"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_agensi_add">Agensi</label>
+                                    <select class="form-control" id="FK_agensi_add"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_kluster_add">Program/Pusat</label>
+                                    <select class="form-control" id="FK_kluster_add"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_peranan_add">Peranan</label>
+                                    <input type="text" class="form-control" value="Urusetia" disabled>
+                                    <input type="text" id="FK_peranan_add" class="form-control hidden" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" id="daftar"><i id="icon_Ya" class="ti-check"></i> Simpan</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade mt-100" id="register_users_swasta">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">Daftar Pengguna Sistem</div>
+                <form id="registerswasta">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <b>Maklumat Perkhidmatan</b>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_gelaran_add_swasta">Gelaran</label>
+                                    <select type="text" required name="FK_gelaran_add_swasta" id="FK_gelaran_add_swasta" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="nama_add_swasta">Nama</label>
+                                    <input type="text" required name="nama_add_swasta" id="nama_add_swasta" placeholder="Nama" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="no_kad_pengenalan_add_swasta">No. Kad Pengenalan</label>
+                                    <input type="text" required name="no_kad_pengenalan_add_swasta" id="no_kad_pengenalan_add_swasta" placeholder="No. K/P" readonly class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="nama_jawatan_add_swasta">Jawatan</label>
+                                    <input type="text" required name="nama_jawatan_add_swasta" id="nama_jawatan_add_swasta" placeholder="Jawatan" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="emel_add_swasta">Emel</label>
+                                    <input type="text" required name="emel_add_swasta" id="emel_add_swasta" placeholder="Emel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="notel_add_swasta">No. Telefon</label>
+                                    <input type="text" required name="notel_add_swasta" id="notel_add_swasta" placeholder="No. Telefon" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="FK_peranan_add_swasta">Peranan</label>
+                                    <input type="text" class="form-control" value="Urusetia" disabled>
+                                    <input type="text" required id="FK_peranan_add_swasta" class="form-control hidden" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" id="daftar"><i id="icon_Ya" class="ti-check"></i> Simpan</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade mt-100" id="reg-capaian">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form role="form" id="registerCapaian">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Daftar Rekod Capaian</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p id="nama_pegawai"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                <label for="FK_users">Pegawai</label>
+                                <input list="FK_userss" readonly id="FK_users" class="form-control">
+                                <datalist id="FK_userss"></datalist>
+                                <input type="text" id="FK_user" class="hidden">
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                <label for="FK_agensi">Agensi</label>
+                                <select tabindex="-1" aria-disabled="true" class="form-control" id="FK_agensi"></select>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 com-sm-12">
+                                <label for="FK_peranan">Peranan</label>
+                                <input type="text" class="form-control" value="Urusetia" disabled>
+                                <input type="text" id="FK_peranan" class="form-control hidden" readonly>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 com-sm-12 hidden" id="divKluster">
+                                <label for="nama_kluster">Program/Pusat</label>
+                                <input class="form-control hidden" required id="FK_kluster">
+                                <input class="form-control" readonly id="nama_kluster">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit"><i class="ti-check"></i> Simpan</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../pengurusan_penilaian/pen_list_urusetia.js"></script>

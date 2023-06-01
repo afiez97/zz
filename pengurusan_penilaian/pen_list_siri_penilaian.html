@@ -1,0 +1,274 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Penilaian</span>
+                                <a class="float-sm-end float-md-end float-lg-end float-xl-end" id="buttonUptPenilaian"><i class="fa fa-pencil-alt"></i></a>
+                            </h5>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-7 col-lg-3">
+                                    <!-- <img src="" width="100%"> -->
+                                    <a href="../../api_penilaian/public/logo/default/JATA_NEGARA_MALAYSIA.png" id="url_logo_1"> <img class="img-fluid img-thumbnail" src="../../api_penilaian/public/logo/default/JATA_NEGARA_MALAYSIA.png" alt="" id="logo_1"> </a>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-9">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr><th width="10%">Kategori Penilaian</th><td class="" id="kategori"></td></tr>
+                                                <tr><th>Kod Penilaian</th><td id="kod_penilaian_1"></td></tr>
+                                                <tr><th>Penganjur</th><td id="nama_kluster_1"></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>    
+                                </div>                        
+                            </div>  
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="siri-penilaian" class="card tab-pane in active">
+                    <div class="body">                  
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <h5 class="txt-dark">Siri Penilaian</h5>                            
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <button id="buttonDaftarSiriPenilaian" type="button" alt="default" class="btn btn-primary hidden" ><i class="fas fa-plus"></i>  Daftar Siri Penilaian</button>
+                            </div>
+                        </div>
+                        <h6 class="d-flex justify-content-end">JUMLAH: <span class="ms-1 row-count"></span></h6>
+                        <div class="table-responsive">
+                            <textarea class="hidden" id="dataSenaraiSiriPenilaian"></textarea>
+                            <table id="listSenaraiSiriPenilaian" class="table" data-sorting="true"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div id="modaldaftarsiripenilaian" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Daftar Siri Penilaian</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <form id="register"> 
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-10">
+                                <label class="control-label mb-10">Maklumat Penilaian</label>
+                                <table class="table table-striped" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td width="50%">
+                                                <label class="control-label mb-10">Nama Penilaian</label><br>
+                                                <span id="nama_penilaian" style="text-transform: uppercase;"></span>
+                                            </td>
+                                            <td width="50%">
+                                                <label class="control-label mb-10">Kod Penilaian</label><br>
+                                                <span id="kod_penilaian"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="control-label mb-10">Kategori Penilaian</label><br>
+                                                <span id="nama_kategori_penilaian"></span>
+                                            </td>
+                                            <td>
+                                                <label class="control-label mb-10">Penyelaras</label><br>
+                                                <span id="nama_penyelaras"></span><br>
+                                                <span id="notel_kerajaan_penyelaras"></span><br>
+                                                <span id="emel_kerajaan_penyelaras"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- <input type="text" placeholder="FK_kategori_penilaian" class="form-control hidden" required id="FK_kategori_penilaian" name="FK_kategori_penilaian"> -->
+                            <!-- <input type="text" placeholder="FK_kluster" class="form-control " required id="FK_kluster" name="FK_kluster"> -->
+                            <span id="FK_kategori_penilaian" class="hidden"></span>
+                            <span id="FK_kluster" class="hidden"></span>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <div class="row">
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12" style="margin-bottom: 15px;">
+                                    <label for="kod_siri_penilaian" class="control-label mb-10"><span class="text-danger">*</span> Siri Penilaian:</label>
+                                    <input type="number" step="1" placeholder="1" class="form-control" required id="kod_siri_penilaian" name="kod_siri_penilaian">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 com-sm-12" style="margin-bottom: 15px;">
+                                    <label for="kod_penilaian" class="control-label mb-10"><span class="text-danger">*</span> Tahun:</label>
+                                    <select class="form-control" id="tahun" required name="tahun" aria-placeholder="Tahun"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="kod_penilaian" class="control-label mb-10">Keterangan:</label>
+                            <textarea placeholder="Keterangan/Tujuan" class="form-control" id="keterangan" name="keterangan"></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="jenis_penilaian" class="control-label mb-10">Jenis Penilaian:</label><br/>
+                            <div id="divJenisPenilaian">
+
+                            </div>
+                            <!-- <div class="radio inlineblock me-3">
+                                <input type="radio" name="jenis_penilaian" id="online" class="with-gap" value="1">
+                                <label for="online">Penilaian Atas Talian</label>
+                            </div>                                
+                            <div class="radio inlineblock">
+                                <input type="radio" name="jenis_penilaian" id="offline" class="with-gap" value="0" checked="">
+                                <label for="offline">Penilaian Bukan Atas Talian</label>
+                            </div> -->
+                        </div>
+                        <!-- <div class="form-group mb-2">
+                            <div class="radio inlineblock me-3">
+                                <input type="radio" name="gender" id="male" class="with-gap" value="option1">
+                                <label for="male">Male</label>
+                            </div>                                
+                            <div class="radio inlineblock">
+                                <input type="radio" name="gender" id="Female" class="with-gap" value="option2" checked="">
+                                <label for="Female">Female</label>
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-group col-lg-12 col-md-12 com-sm-12">
+                            <label for="nama_penilaian" class="control-label mb-10">Nama Penyelaras:</label>
+                            <div class="input-group">
+                                <input type="text" placeholder="No Kad Pengenalan Penyelaras" class="form-control" required id="no_kad_pengenalan_penyelaras" name="no_kad_pengenalan_penyelaras">
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-anim m-0"><i class="fa fa-search"></i><span class="btn-text">Carian</span></button>
+                                </span> 
+                            </div>
+                        </div> -->
+                        <!-- <div class="form-group col-lg-12 col-md-12 com-sm-12">
+                            <div class="row">
+                                <div class="col-md-6 col-6">
+                                    <label for="kod_penilaian" class="control-label mb-10">Bilangan Calon (Maksimum):</label>                                        
+                                    <input id="bil_max_calon" class="form-control" type="number" step="1">
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <label for="kod_penilaian" class="control-label mb-10">Tarikh Penilaian:</label>                                        
+                                    <input id="tarikh_penilaian" class="form-control" type="month">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12">
+                            <label for="waktu_mula" class="control-label mb-10">Waktu Penilaian:</label>
+                            <div class="row">
+                                <div class="col-md-6 col-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon text-success" style="padding-right: 10px;">Waktu Mula</span>
+                                        <input id="waktu_mula" class="form-control" type="time">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon text-danger" style="padding-right: 10px;">Waktu Tamat</span>
+                                        <input id="waktu_tamat" class="form-control" type="time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12">
+                            <label for="nama_penilaian" class="control-label mb-10">Senarai Urusetia:</label>
+                            <div class="row">
+                                <div class="col-md-6 col-6">
+                                    <select id="FK_users" class="form-control"></select>
+                                    <input id="nama" class="hidden" type="text">
+                                    <input id="no_kad_pengenalan" class="hidden" type="text">
+                                </div>
+                                <div class="col-md-5 col-5">
+                                    <div id="FK_kategori_urusetia" class="col-sm-12"></div>
+                                </div>
+                                <div class="col-md-1 col-1">
+                                    <button type="button" id="addListFK_urusetia" class="btn btn-primary btn-square btn-sm"><i class="material-icons">add</i></button>  
+                                </div>
+                            </div>
+                            <hr>
+                            <label for="tableUrusetia" class="control-label mb-10">Urusetia:</label>
+                            <table id="tableUrusetia" class="table table-bord toggle-arrow-tiny" ></table>
+                            <hr>
+                            <label for="tablePenggubal" class="control-label mb-10">Jawatankuasa Penggubal Soalan:</label>
+                            <table id="tablePenggubal" class="table table-bord toggle-arrow-tiny" ></table>
+                            <hr>
+                            <label for="tablePenilai" class="control-label mb-10">Jawatankuasa Penilai:</label>
+                            <table id="tablePenilai" class="table table-bord toggle-arrow-tiny" ></table>
+                            <hr>
+                            <label for="tablePanelPenilai" class="control-label mb-10">Panel Penilai:</label>
+                            <table id="tablePanelPenilai" class="table table-bord toggle-arrow-tiny" ></table>                            
+                            <textarea class="form-control mt-2 hidden" id="urusetia"></textarea>
+                        </div> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="resetForm();">Tutup</button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+
+    <div id="modaluptpenilaian" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-2" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">Kemaskini Penilaian</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="resetForm();" aria-label="Close"></button>
+                </div>
+                <form id="updates"> 
+                    <div class="modal-body row">
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_FK_penyelaras" class="control-label mb-10">Pegawai Bertanggungjawab:</label>
+                            <select class="form-select" id="upt_FK_penyelaras" required name="upt_FK_penyelaras" aria-placeholder="Penyelaras" style="text-transform: uppercase;" ></select>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_nama_kategori_penilaian" class="control-label mb-10">Kategori Penilaian:</label>
+                            <input id="upt_nama_kategori_penilaian" readonly name="upt_nama_kategori_penilaian" class="form-control" required></input>
+                            <input id="upt_FK_kategori_penilaian" name="upt_FK_kategori_penilaian" class="form-control d-none" required></input>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_nama_penilaian" class="control-label mb-10">Nama Penilaian:</label>
+                            <textarea type="text" placeholder="Nama Penilaian" class="form-control" required id="upt_nama_penilaian" name="nama_penilaian"></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_kod_penilaian" class="control-label mb-10">Kod Penilaian:</label>
+                            <input type="text" step="10" placeholder="Kod Penilaian" class="form-control" required id="upt_kod_penilaian" name="kod_penilaian">
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_FK_kluster" class="control-label mb-10">Penganjur:</label>
+                            <input type="text" id="upt_FK_kluster" class="form-control hidden">
+                            <input type="text" id="upt_nama_kluster" readonly class="form-control">
+                        </div>
+                        <div id="img-wraps" class="form-group col-lg-12 col-md-12 com-sm-12" style="margin-bottom: 15px;">
+                            <label for="upt_logo" class="control-label mb-10">Logo:</label>
+                            <br/>
+                            <img width="200px" src="../../api_penilaian/public/logo/default/JATA_NEGARA_MALAYSIA.png" class="img-fluid img-thumbnail" id="upt_logo_1">
+                            <div id="divLogo" class="input-group spinner mt-2" data-bs-trigger="spinner">                                    
+                                <span class="input-group-text"><i class=" text-muted material-icons">add_a_photo</i></span>
+                                <span  id="btn-upload" class="input-group-text input-info btn-info" style="cursor:pointer"> <a class="text-white " id="url-logo" href="javascript:void(0);" >Muat Naik</a> </span>
+                            </div>
+                            <input type="file" id="upt_logo" class="hidden">
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Kembali</button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../pengurusan_penilaian/pen_list_siri_penilaian.js"></script>

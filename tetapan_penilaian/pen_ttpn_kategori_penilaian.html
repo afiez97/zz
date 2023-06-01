@@ -1,0 +1,91 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="col-xs-12">
+                        <h5 class="txt-dark">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                Tetapan Kategori Penilaian
+                            </h5>
+                        </h5>
+                    </div> 
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button id="buttonDaftarKategoriPenilaian" type="button" alt="default" class="btn btn-primary" ><i class="fas fa-plus"></i>  Daftar Kategori</button>
+                        </div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <div class="table-wrap">
+                        <textarea class="hidden" id="dataKategoriPenilaian"></textarea>
+                        <table id="listKategoriPenilaian" class="table" data-sorting="true"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Example Tab --> 
+    <!-- Modal SA & PTL -->
+    <div id="modaldaftarkategoripenilaian" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">Daftar Kategori Penilaian</div>
+                <form id="daftar_kategori_penilaian">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mt-2">
+                                    <label for="nama_kategori_penilaian" class="mb-3">Nama Kategori</label>
+                                    <input type="text" name="nama_kategori_penilaian" id="nama_kategori_penilaian" class="form-control" placeholder="Nama Kategori">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" id="update"><i id="icon_Ya" class="ti-check"></i> Simpan</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+    <!-- Modal SA & PTL -->
+    <div class="modal fade mt-100" id="modalupdatekategoripenilaian">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">Kemaskini Kategori Penilaian</div>
+                <form id="update_kategori_penilaian">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mt-2">
+                                    <label for="nama_kategori_penilaian">Nama Kategori</label>
+                                    <input type="text" name="id_kategori_penilaian" id="id_kategori_penilaian" class="form-control hidden">
+                                    <input type="text" name="upt_nama_kategori_penilaian" id="upt_nama_kategori_penilaian" class="form-control">
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-12">
+                                <div class="form-group mt-2">
+                                    <label for="default_logo">Logo Penilaian</label><br>
+                                    <img width="50%" id="current_default_logo" style="margin: 15px;" alt="current_default_logo">
+                                    <input type="text" name="default_logo" id="default_logo" class="form-control">
+                                    <input type="file" name="new_default_logo" id="new_default_logo" placeholder="Nama" class="form-control">
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" id="update"><i id="icon_Ya" class="ti-check"></i> Kemaskini</button>
+                        <button class="btn btn-danger" type="button" data-bs-dismiss="modal" onclick="resetForm();"><i class="ti-close"></i>Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal SA & PTL -->
+</div>
+<script src="../tetapan_penilaian/pen_ttpn_kategori_penilaian.js"></script>

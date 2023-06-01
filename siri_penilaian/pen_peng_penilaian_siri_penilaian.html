@@ -1,0 +1,685 @@
+<div class="row">
+    <!-- Example Tab -->
+    <div class="row clearfix g-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5 class="txt-dark">
+                                <a href="javascript:void(0);" id="btnKembali"><i class="fa fa-arrow-left"></i></a>
+                                <span id="nama_penilaian_1" class="text-uppercase">Pengurusan Penilaian</span>
+                            </h5>
+
+                            <div class="row">
+                                <div class="col-md-12 m-b-10">
+                                    <div class="">
+                                        <h6 class="text-info">Info Penilaian </h6>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <small class="ps-2"><b>Nama Penilaian</b></small><br>
+                                                        <i class="ps-4" id="txt_nama_penilaian">Penilaian First</i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <small class="ps-2"><b>No. Siri</b></small><br>
+                                                        <i class="ps-4" id="txt_nosiri">2022/00002</i>
+                                                    </td>
+                                                    <td>
+                                                        <small class="ps-2"><b>Kategori Penilaian</b></small><br>
+                                                        <i class="ps-4" id="txt_kategori_penilaian">Kadet</i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <!-- <div class="float-sm-end float-md-end float-lg-end float-xl-end"> -->
+                            <div class="float-sm-end float-md-end float-lg-end float-xl-end">
+                            <ul class="nav nav-tabs" id="tab_sesi"></ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form id="process" > 
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <span class="hidden" id="senaraiSesi"></span>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12 m-b-10">
+                                        <div class="mb-5">
+                                            <input type="text" id="id_sesi_siri_penilaian" class="form-control hidden">
+                                            
+                                            <h6 class="text-info">Tetapan Jadual Penilaian </h6>
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="tetapan_masa_label">Tetapan Masa</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="tetapan_masa">Tetapan Masa</label>
+                                                    <select class="form-control" id="tetapan_masa">
+                                                        <option value="">-Pilih-</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="sesi_penilaian_label">Sesi Penilaian</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="sesi_penilaian">Sesi Penilaian</label>
+                                                    <input type="text" id="sesi_penilaian" class="form-control" required disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="tarikh_mula_label">Tarikh Penilaian Mula</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="tarikh_mula">Tarikh Penilaian</label>
+                                                    <input type="date" id="tarikh_mula" class="form-control date" onchange="set_tarikh_tamat();" placeholder="Ex: 30/07/2016" required disabled>
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="tarikh_tamat_label">Tarikh Penilaian Tamat</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="tarikh_tamat">Tarikh Penilaian</label>
+                                                    <input type="date" id="tarikh_tamat" class="form-control date" onblur="getData()" placeholder="Ex: 30/07/2016" required disabled>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="masa_mula_label">Masa Mula</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="masa_mula">Masa Mula</label>
+                                                    <div class="demo-masked-input">
+                                                        <input type="text" class="form-control time12" onblur="set_masa_tamat();" id="masa_mula" placeholder="Ex: 13:00" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="masa_tamat_label">Masa Tamat</label>
+                                                </div>
+                                                <div class="col-md-4 col-sm-12">
+                                                    <label class="visually-hidden" for="masa_tamat">Masa Tamat</label>
+                                                    <div class="demo-masked-input">
+                                                        <input type="text" class="form-control time12" id="masa_tamat" onblur="getData()" placeholder="Ex: 14:00" disabled>
+                                                        <input type="text" id="diff_masa" class="form-control hidden">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="pautanstatus_label">Pautan Luar (Skype/Google Meet/Zoom/Microsoft Team)</label>
+                                                </div>
+                                                <div class="col-md-10 col-sm-12">
+                                                    <label class="visually-hidden" for="pautan_status">Pautan Luar</label>
+                                                    <div class="material-switch"><input id="switch_status"  type="checkbox"/><label for="switch_status" id="label_switch" class="label-danger"></label><span style="font-size: 8px;" id="text_pautan" class="badge badge-danger">Tidak</span></div>
+                                                    <input type="text" id="status_pautan" class="form-control hidden" value="0">
+
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-3 align-items-center mb-3 hidden" id="pautan"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="pautan_label">Pautan</label>
+                                                </div>
+                                                <div class="col-md-10 col-sm-12">
+                                                    <label class="visually-hidden" for="pautan_zoom">Pautan</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text px-1 py-1">
+                                                            <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                                width="25" height="25"
+                                                                viewBox="0 0 48 48">
+                                                                <circle cx="24" cy="24" r="20" fill="#2196f3"></circle><path fill="#fff" d="M29,31H14c-1.657,0-3-1.343-3-3V17h15c1.657,0,3,1.343,3,3V31z"></path><polygon fill="#fff" points="37,31 31,27 31,21 37,17"></polygon>
+                                                                </svg></i>
+                                                        </span>
+                                                        <input type="text" readonly class="form-control px-3 py-0" value="https://zoom.us/">
+                                                        <input type="text" class="form-control px-3 py-0" id="pautan_zoom" placeholder="" disabled>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12"></div>
+                                                <div class="col-md-10 col-sm-12">
+                                                    <label class="visually-hidden" for="pautan_google">Pautan</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text px-1 py-1">
+                                                            <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                                width="25" height="25"
+                                                                viewBox="0 0 48 48">
+                                                                <rect width="16" height="16" x="12" y="16" fill="#fff" transform="rotate(-90 20 24)"></rect><polygon fill="#1e88e5" points="3,17 3,31 8,32 13,31 13,17 8,16"></polygon><path fill="#4caf50" d="M37,24v14c0,1.657-1.343,3-3,3H13l-1-5l1-5h14v-7l5-1L37,24z"></path><path fill="#fbc02d" d="M37,10v14H27v-7H13l-1-5l1-5h21C35.657,7,37,8.343,37,10z"></path><path fill="#1565c0" d="M13,31v10H6c-1.657,0-3-1.343-3-3v-7H13z"></path><polygon fill="#e53935" points="13,7 13,17 3,17"></polygon><polygon fill="#2e7d32" points="38,24 37,32.45 27,24 37,15.55"></polygon><path fill="#4caf50" d="M46,10.11v27.78c0,0.84-0.98,1.31-1.63,0.78L37,32.45v-16.9l7.37-6.22C45.02,8.8,46,9.27,46,10.11z"></path>
+                                                                </svg>
+                                                            </i>
+                                                        </span>
+                                                        <input type="text" readonly class="form-control px-3 py-0" value="https://meet.google.com/">
+                                                        <input type="text" class="form-control px-3 py-0" id="pautan_google" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12"></div>
+                                                <div class="col-md-10 col-sm-12">
+                                                    <label class="visually-hidden" for="pautan_skype">Pautan</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text px-1 py-1">
+                                                            <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                                width="25" height="25"
+                                                                viewBox="0 0 48 48">
+                                                                <path fill="#03a9f4" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path fill="#03a9f4" d="M33.5 22A11.5 11.5 0 1 0 33.5 45 11.5 11.5 0 1 0 33.5 22zM14.5 3A11.5 11.5 0 1 0 14.5 26 11.5 11.5 0 1 0 14.5 3z"></path><path fill="#fff" d="M24.602,36C18,36,15,32.699,15,30.199C15,28.898,15.898,28,17.199,28c2.801,0,2.102,4.102,7.402,4.102c2.699,0,4.199-1.5,4.199-3c0-0.902-0.402-1.902-2.199-2.402l-5.902-1.5C16,24,15.102,21.398,15.102,18.898c0-5.098,4.699-6.898,9.098-6.898C28.301,12,33,14.199,33,17.199c0,1.301-1,2.102-2.301,2.102c-2.398,0-2-3.402-6.801-3.402c-2.398,0-3.797,1.102-3.797,2.703c0,1.598,1.898,2.098,3.598,2.5l4.402,1C32.898,23.199,34,26,34,28.699C33.898,32.898,30.898,36,24.602,36z"></path>
+                                                                </svg></i>
+                                                        </span>
+                                                        <input type="text" readonly class="form-control px-3 py-0" value="https://join.skype.com/">
+                                                        <input type="text" class="form-control px-3 py-0" id="pautan_skype" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2 col-sm-12"></div>
+                                                <div class="col-md-10 col-sm-12">
+                                                    <label class="visually-hidden" for="pautan_team">Pautan</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text px-1 py-1">
+                                                            <i><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                                width="25" height="25"
+                                                                viewBox="0 0 48 48">
+                                                                <path fill="#5059c9" d="M44,22v8c0,3.314-2.686,6-6,6s-6-2.686-6-6V20h10C43.105,20,44,20.895,44,22z M38,16	c2.209,0,4-1.791,4-4c0-2.209-1.791-4-4-4s-4,1.791-4,4C34,14.209,35.791,16,38,16z"></path><path fill="#7b83eb" d="M35,22v11c0,5.743-4.841,10.356-10.666,9.978C19.019,42.634,15,37.983,15,32.657V20h18	C34.105,20,35,20.895,35,22z M25,17c3.314,0,6-2.686,6-6s-2.686-6-6-6s-6,2.686-6,6S21.686,17,25,17z"></path><circle cx="25" cy="11" r="6" fill="#7b83eb"></circle><path d="M26,33.319V20H15v12.657c0,1.534,0.343,3.008,0.944,4.343h6.374C24.352,37,26,35.352,26,33.319z" opacity=".05"></path><path d="M15,20v12.657c0,1.16,0.201,2.284,0.554,3.343h6.658c1.724,0,3.121-1.397,3.121-3.121V20H15z" opacity=".07"></path><path d="M24.667,20H15v12.657c0,0.802,0.101,1.584,0.274,2.343h6.832c1.414,0,2.56-1.146,2.56-2.56V20z" opacity=".09"></path><linearGradient id="DqqEodsTc8fO7iIkpib~Na_zQ92KI7XjZgR_gr1" x1="4.648" x2="23.403" y1="14.648" y2="33.403" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5961c3"></stop><stop offset="1" stop-color="#3a41ac"></stop></linearGradient><path fill="url(#DqqEodsTc8fO7iIkpib~Na_zQ92KI7XjZgR_gr1)" d="M22,34H6c-1.105,0-2-0.895-2-2V16c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v16	C24,33.105,23.105,34,22,34z"></path><path fill="#fff" d="M18.068,18.999H9.932v1.72h3.047v8.28h2.042v-8.28h3.047V18.999z"></path>
+                                                                </svg></i>
+                                                        </span>
+                                                        <input type="text" readonly class="form-control px-3 py-0" value="https://teams.live.com/meet/">
+                                                        <input type="text" class="form-control px-3 py-0" id="pautan_team" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label for="penilaian_label">Penilaian</label>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <label class="visually-hidden" for="penilaian">Penilaian</label>
+                                                    <div class="radio inlineblock me-3">
+                                                        <input type="radio" name="status_penilaian" id="penilaian_1" class="with-gap" value="1" checked>
+                                                        <label for="penilaian_1">Dalaman</label>
+                                                    </div>                                
+                                                    <div class="radio inlineblock me-3">
+                                                        <input type="radio" name="status_penilaian" id="penilaian_2" class="with-gap" value="2">
+                                                        <label for="penilaian_2">Terbuka</label>
+                                                    </div>
+                                                    <div class="radio inlineblock me-3">
+                                                        <input type="radio" name="status_penilaian" id="penilaian_3" class="with-gap" value="3">
+                                                        <label for="penilaian_3">Terbuka Bersyarat</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3 d-none" id="div_tarikh_mohon"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label  for="bil_calon_label">Tarikh Permohonan Penilaian</label>
+                                                </div>
+                                                <div class="col-md-2 col-sm-12">
+                                                    <input class="form-control" type="date" id="tarikh_mula_mohon">
+                                                </div>
+                                                <div class="col-md-1 col-sm-12" style="text-align: center;">
+                                                    HINGGA
+                                                </div>
+                                                <div class="col-md-2 col-sm-12">
+                                                    <input class="form-control" type="date" id="tarikh_tamat_mohon">
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3"> 
+                                                <div class="col-md-2 col-sm-12">
+                                                    <label for="pautan_label"><b>Pautan</b></label>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="input-group " id="pautanqr">
+                                                        <input type="text" class="form-control col-12" id="pautan_sistem">
+                                                        <button class="btn btn-primary m-0" type="button" id="btn_url" onclick="copyToClipboard()">Salin Pautan&nbsp;<i class="fa fa-copy" id="icon_copy"></i></button>
+                                                        <button class="btn btn-primary m-0" type="button" id="btn_qr" onclick="runUrl()">Papar Kod QR&nbsp;<i class="fa fa-qrcode" id="icon_copy"></i></button>
+                                                    </div>
+                                                    <!-- <span id="pautan_sistem"></span> -->
+                                                    <!-- <canvas  id="qrcode"></canvas> -->
+                                                </div>
+                                                <div class="modal fade" id="modal_qr">
+                                                    <div class="modal-dialog modal-md">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header text-center">
+                                                            <b id="title_att"></b>
+                                                          </div>
+                                                            <div class="modal-body">
+                                                                <div class="m-a-1 text-center">                        
+                                                                    <canvas id="big_qrcode"></canvas>
+                                                                    <br><i id="url_qrcode"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" id="reset_tetapan_process" class="btn btn-simple btn-secondary float-sm-end float-md-end float-lg-end float-xl-end">Semula</button>
+                                        <button type="submit" class="process_simpan btn btn-primary float-sm-end float-md-end float-lg-end float-xl-end">Simpan</button>
+                                        <a class="process_padam btn btn-danger float-sm-end float-md-end float-lg-end float-xl-end">Padam</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 hidden" id="divClassTetapanSoalan">
+                <div class="body">
+                    <div class="row">
+                        <div class="">
+                            <ul class="nav nav-tabs" id="tab_sesi_soalan"></ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <!-- <form id="process">  -->
+                            <div class="col-md-12 m-b-10">
+                                <div class="mb-2">
+                                    <h6 class="text-info">TETAPAN SET SOALAN </h6>
+                                    <div id="divSoalanKeseluruhan" class="d-none">
+                                        <h6 class="text-info hidden" id="tab_keseluruhan">Tetapan Set Soalan</h6>
+                                        <div class="row gy-2 gx-3 align-items-center mb-3 p-3 "> 
+                                            <form id="form_soalan_keseluruhan">
+                                                <div class="col-md-12 col-sm-12 mb-3">
+                                                    <div class="col-md-3 col-sm-12 mb-3">
+                                                        <label class="label" for="checkbox_set_soalan_keseluruhan">Set Soalan</label>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-12">
+                                                        <div id="checkbox_set_soalan_keseluruhan"></div>
+                                                        <!-- <select class="form-control" id="set_soalan"></select> -->
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="button" id="reset_tetapan" class="btn btn-simple btn-secondary float-sm-end float-md-end float-lg-end float-xl-end">Semula</button>
+                                                        <button type="submit" class="btn btn-primary float-sm-end float-md-end float-lg-end float-xl-end">Simpan</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div id="divSoalanPerBahagian" class="d-none">
+                                        <h6 class="text-info hidden" id="tab_bahagian">Tetapan Set Soalan</h6>
+                                        <div class="row gy-2 gx-3 align-items-center mb-3 p-3 "> 
+                                            <form id="form_soalan_per_bahagian">
+                                                <div class="col-md-12 col-sm-12 mb-3" id="divPerBahagian">
+                                                    <div class="col-md-3 col-sm-12 mb-3">
+                                                        <label class="label" for="checkbox_set_soalan_per_bahagian">Set Soalan</label>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <div id="checkbox_set_soalan_per_bahagian"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" id="divJana">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-primary float-sm-end float-md-end float-lg-end float-xl-end">Jana</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        <input id="id_sesi_siri_penilaian_per_bahagian" class="d-none">
+                                                        <input id="tarikh_mula_per_bahagian" class="d-none">
+                                                        <input id="tarikh_tamat_per_bahagian" class="d-none">
+                                                        <div id="div_set_soalan_per_bahagian"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row d-none" id="divSubmit">
+                                                    <div class="col-md-12">
+                                                        <button type="button" onclick="reset_per_bahagian();" class="btn btn-simple btn-secondary float-sm-end float-md-end float-lg-end float-xl-end">Semula</button>
+                                                        <button type="submit" class="btn btn-primary float-sm-end float-md-end float-lg-end float-xl-end">Simpan</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div id="divSoalanPerSoalan" class="d-none">
+                                        <h6 class="text-info hidden" id="tab_soalan">Tetapan Soalan </h6>                                            
+                                        <div class="row gy-2 gx-3 align-items-center mb-3 p-3 hidden" id="per_soalan"> 
+                                            <div class="col-md-12 col-sm-12">
+                                                <div id="bahagian">
+                                                    
+                                                </div>
+                                                <table class="table table-bordered" id="table_soalan">
+                                                    <!-- <table class="table table-bordered table-striped" id="table_soalan"> -->
+                                                    <tfoot style="border: 1px #dddddd solid;">
+                                                        <tr>
+                                                            <td colspan="5">TOTAL</td>
+                                                            <td>
+                                                                <span class="hidden" id="total_sum_value">0</span>
+                                                                <span id="text_total_sum_value">0</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                                <input type="text" class="form-control hidden" id="index">
+                                                <textarea class="form-control hidden" id="data_soalan">[]</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <form id="form_template"> 
+                            <div class="col-md-12 m-b-10">
+                                <div class="mb-5">
+                                    <h6 class="text-info">Templat Emel </h6>
+
+                                    <!-- <hr class="mt-4"> -->
+
+                                    <div class="row gy-2 gx-3 align-items-center mt-4"> 
+                                        <div class="col-md-12 col-sm-12">
+                                            <label class="visually-hidden" for="template_emel">Templat Emel</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row gy-2 gx-3 align-items-center mb-3 p-3" > 
+                                        <div class="col-md-12 col-sm-12">
+                                            Nama : [Nama Peserta] <br>
+                                            No KP : [No. Kad Pengenalan Peserta]<br><br>
+                                            Tuan/Puan, <br>
+                                            <b>PENILAIAN [Nama Penilaian] - [Kod Siri Penilaian]</b> <br><br>
+
+                                            Dengan hormatnya tuan/puan dijemput menghadiri [Nama Penilaian]. Butir-butir penilaian adalah seperti berikut: <br><br>
+                
+                                            <table class="table table-bordered" width="100%">
+                                                <tr>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: left; padding-left: 5px;">
+                                                    PENILAIAN
+                                                    </th>
+                                                    <td style="border: 1px solid black; text-align: left; padding-left: 5px;">
+                                                        [Nama Penilaian]
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: left; padding-left: 5px;">
+                                                        NO. ANGKA GILIRAN
+                                                    </th>
+                                                    <td style="border: 1px solid black; text-align: left; padding-left: 5px;">
+                                                        [No. Angka Giliran Peserta] <b>(INI ADALAH KATA LALUAN ANDA)</b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: left; padding-left: 5px;">
+                                                        PAUTAN
+                                                    </th>
+                                                    <td style="border: 1px solid black; text-align: left; padding-left: 5px;">
+                                                        <a href="">[Pautan]</a><br> <b>*Pautan ini hanya akan AKTIF satu (1) jam sebelum penilaian bermula.</b>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br><br>
+            
+                                            <table style="border: 1px solid black;" width="100%">
+                                                <tr>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: center;">
+                                                        TARIKH
+                                                    </th>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: center;">
+                                                        BAHAGIAN
+                                                    </th>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: center;">
+                                                        MASA DARI
+                                                    </th>
+                                                    <th style="border: 1px solid black; background-color: grey; text-align: center;">
+                                                        MASA HINGGA
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid black; text-align: center;">
+                                                        [Tarikh Penilaian]
+                                                    </td>
+                                                    <td style="border: 1px solid black; text-align: center;">
+                                                        [Bahagian]
+                                                    </td>
+                                                    <td style="border: 1px solid black; text-align: center;">
+                                                        [Waktu Mula]
+                                                    </td>
+                                                    <td style="border: 1px solid black; text-align: center;">
+                                                        [Waktu Tamat]
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br><br>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+                                            <textarea id="template_emel_textarea" name="template_emel" class="tinymce_soalan"></textarea>                                                    
+                                        </div>
+                                        <div class="d-flex flex-row-reverse">
+                                            <button type="submit" name="simpan" class="btn btn-primary"><i class="fa fa-save"></i> SIMPAN</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="body">
+                    <div class="row">
+                        <!-- <form id="process">  -->
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-12 m-b-10">
+                                        <div class="mb-5">
+                                            <h6 class="text-info">Calon Penilaian </h6>
+                                            <div class="row">
+                                                <div class="">
+                                                    <ul class="nav nav-tabs" id="tab_calon_soalan"></ul>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row gy-2 gx-3 align-items-center mt-4"> 
+                                                <div class="col-md-12 col-sm-12">
+                                                    <label class="visually-hidden" for="senarai_calon">Senarai Calon</label>
+                                                    <div class="btn-group ">
+                                                        <button type="button" class="btn btn-info" title="Tambah Calon" data-bs-toggle="modal" data-bs-target="#addCalon"> <span class="docs-tooltip" data-toggle="tooltip" > <span class="fa fa-user-plus"></span>&nbsp;Tambah Calon</span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-simple btn-info" title="Muat Naik Calon" data-bs-toggle="modal" data-bs-target="#uploadCalon"> <span class="docs-tooltip" data-toggle="tooltip" > <span class="docs-tooltip" > <span class="fa fa-upload"></span>&nbsp;Muat Naik Calon </span>
+                                                        </button>
+                                                        <a type="button" target="_blank" href="../uploadNama.xlsx" class="btn btn-info" title="Template Nama Calon"> <span class="docs-tooltip" > <span class="fa fa-download"></span>&nbsp;Template Nama Calon </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-2 gx-3 align-items-center mb-3 p-3" > 
+                                                <div class="col-md-12 col-sm-12">
+                                                    <h6 class="d-flex justify-content-end">JUMLAH: <span class="ms-1 row-count"></span></h6>
+                                                    <table class="table table-striped" id="table_calon"></table>
+                                                    <div class="col-md-12" style="text-align: right;" id="padam_calon"></div>
+                                                    <textarea class="form-control hidden" id="list_calon">[]</textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="addCalon" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog">
+                <form id="simpan_individu">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="title" id="largeModalLabel">Tambah Calon</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="reset_modal(1);" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"> 
+                                <div class="col-md-7">
+                                    <div class="input-group mb-3">
+                                        <select class="form-control" required id="sesi_individu"></select>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 col-md-7">
+                                    <input type="text" class="form-control " id="no_kad_pengenalan" maxlength="12" placeholder="No. Kad Pengenalan" aria-label="No. Kad Pengenalan" aria-describedby="button-addon2">
+                                    <button class="btn btn-primary m-0" type="button" id="btn_semak"><i id="icon_semak_ic" class="fa fa-search"></i>&nbsp;Semak</button>
+                                </div>
+                                <div class="col-md-12" id="data_calon">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-10">
+                                            <b class="hidden" id="message_load_0">Maklumat Pengguna</b>
+                                            <table class="table " width="100%">
+                                                <tbody>
+                                                    <tr id="message_load_1" class="hidden bg-light-default">
+                                                        <td colspan="2">
+                                                            <b><i class="fas fa-cogs fa-spin"></i>&nbsp;Sila tunggu</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="message_load_2" class="hidden tr-light-danger">
+                                                        <td colspan="2">
+                                                            <span><i class="fa fa-exclamation-circle"></i>&nbsp;Calon Telah Berdaftar</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="message_load_3" class="hidden tr-light-danger">
+                                                        <td colspan="2">
+                                                            <span class="text-dark-danger">Tiada rekod ditemui. Sila Tekan Butang <b>Tambah Calon</b> Untuk Menambah Calon.</span><br/>
+                                                            <button type="button" id="btn_form" class=" text-13 btn btn-danger bg-light btn-simple btn-sm" id="buttonUptSiriPenilaian"><i class="fa fa-plus-circle"></i>&nbsp;Tambah Calon</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="data_load_1" class="hidden bg-light-default">
+                                                        <td width="50%">
+                                                            <b><small class="text-danger">*&nbsp;</small>Nama</b><br>
+                                                            <span id="nama_text_add" style="text-transform: uppercase;"></span>
+                                                            <input type="text" class="form-control bg-white hidden" required id="nama_add" placeholder="Nama">
+                                                        </td>
+                                                        <td width="50%">
+                                                            <b><small class="text-danger">*&nbsp;</small>No K/Pengenalan</b><br>
+                                                            <span id="noic_text_add"></span>
+                                                            <input type="text" class="form-control bg-white hidden" required readonly id="noic_add" placeholder="No. K/Pengenalan">
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="data_load_2" class="hidden ">
+                                                        <td>
+                                                            <b><small class="text-danger">*&nbsp;</small>No Telefon</b><br>
+                                                            <span id="notel_text_add" class="hidden"></span>
+                                                            <input placeholder="Contoh : XXXXXXXXXXX" type="text" onkeypress="numberingFormat('notel',11)" name="notel" class="form-control bg-white" required id="notel_add" placeholder="No. Telefon">
+                                                        </td>
+                                                        <td>
+                                                            <b><small class="text-danger">*&nbsp;</small>Emel</b><br>
+                                                            <span id="emel_text_add" class="hidden"></span>
+                                                            <input type="email" class="form-control bg-white" required id="emel_add" placeholder="Emel">
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="data_load_3" class="hidden ">
+                                                        <td>
+                                                            <b>Gred</b><br>
+                                                            <span id="nama_gred_add" class="hidden"></span>
+                                                            <input type="text" name="gred" id="gred_add" class="form-control" placeholder="Gred">
+                                                        </td>
+                                                        <td>
+                                                            <b><small class="text-danger">*&nbsp;</small>Jawatan</b><br>
+                                                            <span id="nama_jawatan_add" class="hidden"></span>
+                                                            <input type="text" name="nama_jawatan" id="jawatan_add" required class="form-control" placeholder="Jawatan">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                            
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer" id="btn_modal_footer">
+                                <button class="btn btn-primary" type="submit" >Simpan</button>
+                                <button type="button" onclick="reset_modal(1)" class="btn btn-secondary btn-simple" >Semula</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="resetForm();">Tutup</button>     
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal fade" id="uploadCalon" data-bs-backdrop="static" tabindex="-1" role="dialog">
+                <form id="simpan_kumpulan">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="title" id="largeModalLabel">Muatnaik Calon</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="reset_modal(2);close_modal(2);" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"> 
+                                <div class="col-md-7">
+                                    <div class="input-group mb-3">
+                                        <select class="form-control" required id="sesi_muat_naik"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="input-group mb-3">
+                                        <button class="btn btn-primary m-0" type="button" id="btn-upload"  onclick="btn_upload()" title="Muat Naik Senarai Calon" ><i class="fa fa-upload"></i></button>
+                                        <input type="text" placeholder="Muat Naik Fail Excel" readonly class="form-control" accept=".xlsx" id="text_file_calon" aria-label="No. Kad Pengenalan" aria-describedby="button-addon2">
+                                        <input type="file" class="form-control hidden" accept=".xlsx" id="file_calon" aria-label="No. Kad Pengenalan" aria-describedby="button-addon2">
+                                        <span class="input-group-text">.xlsx</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12 table-responsive">
+                                    <table id="senaraiCalonTemp" class="table table-bordered"></table>
+                                    <textarea id="listCalonTemp" class="form-control hidden"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" >Simpan</button>
+                                <button type="button" onclick="reset_modal(2)" class="btn btn-secondary btn-simple" >Semula</button>
+                                <button type="button" onclick="close_modal(2)" class="btn btn-danger" >Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> 
+
+<script src="../assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<!-- <script src="../assets/js/pages/forms/advanced-form-elements.js"></script>  -->
+
+
+<!-- <script src="../assets/plugins/scripts/qrious.min.js.js"></script> -->
+
+<script src="../assets/tinymce/tinymce.min.js"></script>
+<script src="../assets/bundles/tagsinput.bundle.js"></script> 
+<script src="../siri_penilaian/pen_peng_penilaian_siri_penilaian.js"></script>

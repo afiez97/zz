@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js " lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta name="description" content="Responsive Bootstrap 5 and web Application ui kit.">
+
+        <title>Penilaian - SuperAdmin</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Favicon-->
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../assets/plugins/footable-bootstrap/css/footable.bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../assets/plugins/calendar/dist/fullcalendar.css" />
+        <link rel="stylesheet" href="../assets/sweet-alert/sweetalert2.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/sweet-alert/sweetalert2.min.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/plugins/select2/dist/css/select2.min.css">
+        <link rel="stylesheet" href="../assets/plugins/select2/dist/css/select2-bootstrap.css">
+        <link rel="stylesheet" href="../assets/plugins/nestable/jquery-nestable.css">
+
+    </head>
+    <style>
+        @media (max-width: 767px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+        #flotTip {
+            padding: 3px 5px;
+            background-color: #000;
+            z-index: 100;
+            color: #fff;
+            opacity: .80;
+            filter: alpha(opacity=85);
+        }
+    </style>
+    <body data-alpino="theme-blush">
+    <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="mt-4"><img src="../assets/images/logo.svg" width="48" height="48" alt="Alpino"></div>
+                <p>Please wait...</p>        
+            </div>
+        </div>
+        <div class="overlay"></div><!-- Overlay For Sidebars -->
+
+        <!-- Left Sidebar -->
+        <aside id="minileftbar" class="minileftbar">
+            <ul class="menu_list">
+                <li>
+                    <a href="javascript:void(0);" class="bars"></a>
+                    <a class="navbar-brand" href="index.html"><img src="../assets/images/logo.svg" alt="Alpino"></a>
+                </li>
+                <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down d-none"><i class="zmdi zmdi-search"></i></a></li>
+                <!-- <li><a href="javascript:void(0);" class="menu-sm"><i class="zmdi zmdi-swap"></i></a></li>         -->
+                <li class="perananapp-btn"><a href="javascript:void(0);"><i class="material-icons">accessibility</i></a></li>
+                <li class="menuapp-btn"><a href="javascript:void(0);"><i class="zmdi zmdi-apps"></i></a></li>
+                <li class="notifications badgebit hidden">
+                    <a href="javascript:void(0);">
+                        <i class="zmdi zmdi-notifications"></i>
+                        <div class="notify">
+                            <span class="heartbit"></span>
+                            <span class="point"></span>
+                        </div>
+                    </a>
+                </li>
+                <li class="task badgebit hidden">
+                    <a href="javascript:void(0);">
+                        <i class="zmdi zmdi-flag"></i>
+                        <div class="notify">
+                            <span class="heartbit"></span>
+                            <span class="point"></span>
+                        </div>
+                    </a>
+                </li>     
+                <li><a href="javascript:void(0);" class="fullscreen" data-provide="fullscreen"><i class="zmdi zmdi-fullscreen"></i></a></li>
+                <li class="power">
+                    <a href="javascript:void(0);" class="js-right-sidebar"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>            
+                    <a id="logKeluar" href="javascript:void(0);" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+                </li>
+            </ul>
+        </aside>
+
+        <aside class="right_menu">
+            <div class="peranan-app">
+                <div class="slim_scroll">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Peranan</strong></h2>
+                        </div>
+                        <div class="body">
+                            <ul class="list-unstyled menu">
+                                <li id="li_super" class="d-none"><a id="sa" href="javascript:void(0);"><span>Super Admin</span></a></li>
+                                <li id="li_ptl" class="d-none"><a id="ptl" href="javascript:void(0);"><span>PTL</span></a></li>
+                                <li id="li_ppp" class="d-none"><a id="ppp" href="javascript:void(0);"><span>PPP</span></a></li>
+                                <li id="li_us" class="d-none"><a id="us" href="javascript:void(0);"><span>Lantikan</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-app">
+                <div class="slim_scroll">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Menu</strong></h2>
+                        </div>
+                        <div class="body">
+                            <ul class="list-unstyled menu">
+                                <li><a id="dashboard" href="javascript:void(0);"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                                <li><a id="pentadbir_sistem" href="javascript:void(0);"><i class="zmdi zmdi-lock-closed"></i><span>Pentadbir Sistem</span></a></li>
+                                <li><a id="penilaian" href="javascript:void(0);"><i class="zmdi zmdi-format-align-left"></i><span>Penilaian</span></a></li>
+                                <li><a id="takwim_penilaian" href="javascript:void(0);"><i class="zmdi zmdi-calendar"></i><span>Takwim Penilaian</span></a></li>
+                                <li><a id="laporan" href="javascript:void(0);"><i class="zmdi zmdi-equalizer"></i><span>Laporan</span></a></li>
+                                <li><a id="profil" href="javascript:void(0);"><i class="zmdi zmdi-mood"></i><span>Profil Pengguna</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notif-menu">
+                <div class="slim_scroll">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Mesej</strong></h2>
+                        </div>
+                        <div class="body">
+                            <ul class="messages list-unstyled">
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object rounded-circle" src="../assets/images/xs/avatar1.jpg" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Penyelaras Penilaian <small class="time">35min ago</small></span>
+                                                <p class="message"><span style="white-space: pre-line;">Anda telah dilantik sebagai Urusetia bagi Penilaian UPSR Siri [01/2022]</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object rounded-circle" src="../assets/images/xs/avatar2.jpg" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Pegawai Tadbir Latihan <small class="time">35min ago</small></span>
+                                                <p class="message"><span style="white-space: pre-line;">Anda telah dilantik sebagai Penyelaras Penilaian bagi Penilaian PMR Siri [01/2022]</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <div class="media">
+                                            <img class="media-object rounded-circle" src="../assets/images/xs/avatar3.jpg" alt="">
+                                            <div class="media-body">
+                                                <span class="name">Penyelaras Penilaian <small class="time">35min ago</small></span>
+                                                <p class="message"><span style="white-space: pre-line;">Anda telah dilantik sebagai Penggubal Soalan bagi Penilaian SPM Siri [01/2022]</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>        
+                            </ul>  
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Notikasi</strong></h2>
+                        </div>
+                        <div class="body">
+                            <ul class="notification list-unstyled">
+                                <li>
+                                    <i class="zmdi zmdi-settings text-warning"></i>
+                                    <strong>Penilaian UPSR Siri [01/2022]</strong>
+                                    <p><a href="javascript:void(0)"><span class="text-warning">Setting Dalam Proses</span></a></p>
+                                    <small class="text-muted">Urusetia</small>
+                                </li>
+                                <li>
+                                    <i class="zmdi zmdi-edit text-danger"></i>
+                                    <strong>Penilaian PMR Siri [01/2022]</strong>
+                                    <p><a href="javascript:void(0)"><span class="text-danger">Tamat</span></a></p>
+                                    <small class="text-muted">Penyelaras Penilaian</small>
+                                </li>
+                                <li>
+                                    <i class="zmdi zmdi-settings text-success"></i>
+                                    <strong>Penilaian SPM Siri [01/2022]</strong>
+                                    <p><a href="javascript:void(0)"><span class="text-success">Setting Selesai</span></a></p>
+                                    <small class="text-muted">Penggubal Soalan</small>
+                                </li>
+                            </ul>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="task-menu">
+                <div class="slim_scroll">
+                    <div class="card tasks">
+                        <div class="header">
+                            <h2><strong>Status Penilaian</strong></h2>
+                        </div>
+                        <div class="body m-b-10">
+                            <a href="javascript:void(0);">
+                                <span class="text-muted">Penilaian UPSR Siri [01/2022]<span class="float-right">29%</span></span>
+                                <div class="progress">
+                                    <div class="progress-bar l-turquoise" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;"></div>
+                                </div>
+                                <ul class="list-unstyled team-info">
+                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="body m-b-10">
+                            <a href="javascript:void(0);">
+                                <span class="text-muted">Penilaian PMR Siri [01/2022]<span class="float-right">78%</span></span>
+                                <div class="progress">
+                                    <div class="progress-bar l-slategray" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%;"></div>
+                                </div>
+                                <ul class="list-unstyled team-info">
+                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                    <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="body">
+                            <a href="javascript:void(0);">
+                                <span class="text-muted">Penilaian SPM Siri [01/2022]<span class="float-right">68%</span></span>
+                                <div class="progress">
+                                    <div class="progress-bar l-coral" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"></div>
+                                </div>
+                                <ul class="list-unstyled team-info">
+                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
+                                    <li><img src="../assets/images/xs/avatar8.jpg" alt="Avatar"></li>
+                                    <li><img src="../assets/images/xs/avatar9.jpg" alt="Avatar"></li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightsidebar" class="right-sidebar">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#setting">Setting</a></li>        
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#activity">Activity</a></li>
+                </ul>
+                <div class="tab-content slim_scroll">
+                    <div class="tab-pane slideRight active" id="setting">
+                        <div class="card d-none">
+                            <div class="header">
+                                <h2><strong>Colors</strong> Skins</h2>
+                            </div>
+                            <div class="body">
+                                <ul class="choose-skin list-unstyled mb-0">
+                                <li data-theme="purple"><div class="purple"></div></li>
+                                <li data-theme="blue"><div class="blue"></div></li>
+                                <li data-theme="cyan"><div class="cyan"></div></li>
+                                <li data-theme="green"><div class="green"></div></li>
+                                <li data-theme="orange"><div class="orange"></div></li>
+                                <li data-theme="red"><div class="red"></div></li>
+                                <li data-theme="blush" class="active"><div class="blush"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card theme-light-dark">
+                        <div class="header">
+                                <h2><strong>Theme</strong> Option</h2>
+                            </div>  
+                            <div class="setting-mode mb-3">
+                                <ul class="list-group list-unstyled mb-0 mt-1">
+                                    <li class="list-group-item d-flex align-items-center py-1 px-2">
+                                        <div class="form-check form-switch theme-switch mb-0">
+                                            <input class="form-check-input" type="checkbox" id="theme-switch">
+                                            <label class="form-check-label" for="theme-switch">Enable Dark Mode!</label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center py-1 px-2">
+                                        <div class="form-check form-switch theme-high-contrast mb-0">
+                                            <input class="form-check-input" type="checkbox" id="theme-high-contrast">
+                                            <label class="form-check-label" for="theme-high-contrast">Enable High Contrast</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane slideLeft" id="activity">
+                        <div class="card activities">
+                            <div class="header">
+                                <h2><strong>Jejak Audit</strong></h2>
+                            </div>
+                            <div class="body">
+                                <div class="streamline b-accent" id="userLog">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="leftsidebar" class="sidebar">
+                
+            </div>
+        </aside>
+
+        <section class="content" id="displaycontent">
+            <div class="container-fluid">
+                <div class="row clearfix g-3 mb-3">
+                    <div class="col-lg-12" id="content">
+                        <div class="card">
+                            <div class="body">
+                                <h4 class="margin-0">Selamat Datang Ke Sistem Penilaian INTAN!</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix g-3 mb-3" id="listpenilaian"></div>
+                <div class="row clearfix g-3 mb-3">
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-center hidden">
+                        <div class="card">                   
+                            <div class="body text-center">
+                                <input type="text" class="knob" data-linecap="round" id="total_login" value="0" readonly data-width="100%" data-height="315" data-thickness="0.25" data-fgColor="#64c8c0">
+                                <p class="text-muted mb-0">BILANGAN PENGGUNA AKTIF HARI INI</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-md-12 text-center">
+                        <div class="card">
+                            <div class="body text-center">
+                                <div id="pie_kategori_penilaian" class="flot-chart mb-1"></div>
+                                <p class="text-muted mb-0">KATEGORI PENILAIAN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Jquery Core Js -->
+        <script src="../config.js"></script>
+        <script src="../assets/bundles/libscripts.bundle.js"></script>
+        <script src="../assets/bundles/vendorscripts.bundle.js"></script>
+        <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
+
+        <script src="../assets/bundles/easypiechart.bundle.js"></script> <!-- easypiechart Plugin Js -->
+
+        <script src="../assets/bundles/knob.bundle.js"></script>
+        <script src="../assets/bundles/mainscripts.bundle.js"></script>
+        <!-- <script src="../assets/plugins/select2/select2.min.js"></script> -->
+        <script src="../assets/plugins/select2/dist/js/select2.full.min.js"></script>
+        <script src="../assets/plugins/footable-bootstrap/js/footable.min.js"></script>
+        <script src="../assets/plugins/fontawesome/js/all.js"></script>
+        <script src="../assets/sweet-alert/sweetalert2.js"></script>
+        <script src="../assets/sweet-alert/sweetalert2.min.js"></script>
+        <script src="../assets/bundles/flotscripts.bundle.js"></script> <!-- flot charts Plugin Js -->
+        <script src="../assets/bundles/jquery.flot.tooltip.min.js"></script>
+        <script src="../index.js"></script>
+    </body>
+</html>
